@@ -1,0 +1,33 @@
+acceptance_id,criterion,category,status,notes
+AC01,Dataset reproducible with same seed and parameters,Core functional,DEMONSTRATED,
+AC02,Raw input keys unique and input count verified,Core functional,DEMONSTRATED,
+AC03,One common input snapshot created,Core functional,DEMONSTRATED,
+AC04,Baseline branch created from common snapshot,Core functional,DEMONSTRATED,
+AC05,Candidate branch created from same snapshot,Core functional,DEMONSTRATED,
+AC06,Both branches expose identical raw input before transformations,Core functional,DEMONSTRATED,
+AC07,Original transformation executes on baseline,Core functional,DEMONSTRATED,
+AC08,Modified transformation executes on candidate,Core functional,DEMONSTRATED,
+AC09,Raw input remains unchanged,Core functional,DEMONSTRATED,
+AC10,Baseline remains unchanged by candidate writes,Core functional,DEMONSTRATED,
+AC11,"SQL identifies added, missing, changed and unchanged records",Core functional,DEMONSTRATED,
+AC12,Classification boundary tests pass,Core functional,DEMONSTRATED,
+AC13,Repeated execution gives equivalent logical outputs,Core functional,DEMONSTRATED,
+AC14,Snapshot can be reopened and queried,Lifecycle,DEMONSTRATED,
+AC15,Historical state can be accessed,Lifecycle,DEMONSTRATED,
+AC16,Clone and isolation tested or marked unverified,Lifecycle,DEMONSTRATED,
+AC17,Restore tested or marked unverified,Lifecycle,DEMONSTRATED,Restore requires the branch to be detached
+AC18,Branch deletion and eligible snapshot expiry tested or marked unverified,Lifecycle,DEMONSTRATED,
+AC19,Garbage collection outcome measured and documented,Lifecycle,DEMONSTRATED,Local GC is demonstrated. Remote GC is unverified and compaction is documented
+AC20,Conventional DuckDB control produces equivalent outputs,Control/benchmark,DEMONSTRATED,
+AC21,"10K, 100K, 1M attempted; 10M optional",Control/benchmark,DEMONSTRATED,10M was run after the required sizes
+AC22,"Controlled update workload changes exact 1%, 10%, 50%, 100% row counts",Control/benchmark,DEMONSTRATED,
+AC23,Storage measured using consistent physical boundaries,Control/benchmark,DEMONSTRATED,
+AC24,Timings separated by operation,Control/benchmark,DEMONSTRATED,
+AC25,Repeated measurements and environment details recorded,Control/benchmark,DEMONSTRATED,
+AC26,Normal restart tested,Reliability/reporting,DEMONSTRATED,Normal restart only. Not power-loss evidence
+AC27,Committed-write process termination tested safely,Reliability/reporting,DEMONSTRATED,SIGKILL after a completed checkpoint or snapshot. Not power-loss evidence
+AC28,In-progress failure tested where feasible or marked unverified,Reliability/reporting,DEMONSTRATED,In-progress SIGKILL was run. Power loss and publication-failure injection remain unverified
+AC29,Recovered states pass applicable integrity checks,Reliability/reporting,DEMONSTRATED,
+AC30,CSV and Markdown reports generated,Reliability/reporting,DEMONSTRATED,results/REPORT.md and results/reports
+AC31,README explains setup and execution,Reliability/reporting,DEMONSTRATED,README.md at the evaluation project root
+AC32,Capabilities classified demonstrated/documented/unverified,Reliability/reporting,DEMONSTRATED,results/reports/capability_matrix.csv

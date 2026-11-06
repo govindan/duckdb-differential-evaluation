@@ -1,0 +1,92 @@
+{
+  "phase": 1,
+  "status": "passed",
+  "started_at": "2026-11-06T04:29:49.750991+00:00",
+  "database": "bank",
+  "dataset_size": 10000,
+  "seed": 20261106,
+  "currency": "AUD",
+  "differential_auto_gc": false,
+  "duckdb_cli": "build/release/duckdb",
+  "repository": "experiment/repository",
+  "results_dir": "experiment/results/functional/phase1",
+  "os": "macOS-27.0.1-arm64-arm-64bit",
+  "architecture": "arm64",
+  "duckdb_version": "v2.0.0 (Cyanoptera) d54cbbe3df",
+  "input_checksum_sha256": "7e2de72f9e9f2f8a976ddb9377bb5e37f034459f46761efa209dd89d95bf3560",
+  "input_csv": "experiment/data/transactions.csv",
+  "differential_version": "v1.0.0",
+  "differential_auto_gc_setting": "false",
+  "snapshot": {
+    "operation_id": "f4ad39e5-b7df-402a-815d-204326746ff2",
+    "database_id": "fbd00426-98bf-4fc4-b9e4-312aadaf5d2c",
+    "branch_id": "44f11d54-c942-4b19-8a1b-ad6c2e96f354",
+    "snapshot_id": "1",
+    "state": "complete",
+    "export_state": "not_required",
+    "snapshot_time": "2026-11-06 09:59:50.074162+05:30"
+  },
+  "branches": {
+    "baseline": {
+      "operation_id": "b70443b0-ee34-4505-b7df-b82ebfb2606e",
+      "database_id": "fbd00426-98bf-4fc4-b9e4-312aadaf5d2c",
+      "branch_id": "f64d5407-5d34-4991-a227-4cedaf240524",
+      "snapshot_id": "1",
+      "state": "complete"
+    },
+    "candidate": {
+      "operation_id": "4cec09e4-a0de-4e72-89f7-a19874f4e592",
+      "database_id": "fbd00426-98bf-4fc4-b9e4-312aadaf5d2c",
+      "branch_id": "b1723911-2f48-4087-ab29-bfc852697e96",
+      "snapshot_id": "1",
+      "state": "complete"
+    }
+  },
+  "raw_verification": {
+    "branches_from_snapshot": "2",
+    "main_head": "1",
+    "main_count": "10000",
+    "baseline_count": "10000",
+    "candidate_count": "10000",
+    "main_duplicate_keys": "0",
+    "baseline_duplicate_keys": "0",
+    "candidate_duplicate_keys": "0",
+    "main_not_baseline": "0",
+    "baseline_not_main": "0",
+    "baseline_not_candidate": "0",
+    "candidate_not_baseline": "0",
+    "main_fingerprint": "9ef5daa48404d971abef48dcb20730e7",
+    "baseline_fingerprint": "9ef5daa48404d971abef48dcb20730e7",
+    "candidate_fingerprint": "9ef5daa48404d971abef48dcb20730e7"
+  },
+  "baseline_classification_fingerprint": "65934bf740f50d94ef0b59e99ef0a204",
+  "candidate_classification_fingerprint": "1de4b3009c1b87bfea99f61b023b197f",
+  "isolation": {
+    "main_classification_tables": "0",
+    "baseline_classification_tables": "1",
+    "candidate_classification_tables": "1",
+    "main_classification_columns": "0",
+    "baseline_classified_rows": "10000",
+    "candidate_classified_rows": "10000",
+    "baseline_fingerprint": "65934bf740f50d94ef0b59e99ef0a204",
+    "candidate_fingerprint": "1de4b3009c1b87bfea99f61b023b197f",
+    "main_raw_fingerprint": "9ef5daa48404d971abef48dcb20730e7",
+    "baseline_raw_fingerprint": "9ef5daa48404d971abef48dcb20730e7",
+    "candidate_raw_fingerprint": "9ef5daa48404d971abef48dcb20730e7",
+    "main_not_baseline": "0",
+    "baseline_not_candidate": "0"
+  },
+  "class_counts": {
+    "baseline": {
+      "HIGH": 1005,
+      "LOW": 4000,
+      "MEDIUM": 4995
+    },
+    "candidate": {
+      "HIGH": 2991,
+      "LOW": 4000,
+      "MEDIUM": 3009
+    }
+  },
+  "finished_at": "2026-11-06T04:29:50.480672+00:00"
+}

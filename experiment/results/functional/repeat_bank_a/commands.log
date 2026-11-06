@@ -1,0 +1,236 @@
+[
+  {
+    "script": "experiment/results/functional/repeat_bank_a/scripts/identity.sql",
+    "argv": [
+      "build/release/duckdb",
+      "-no-init",
+      "-no-agent",
+      "-bail",
+      "-csv",
+      ":memory:",
+      "-f",
+      "experiment/results/functional/repeat_bank_a/scripts/identity.sql"
+    ]
+  },
+  {
+    "script": "experiment/results/functional/repeat_bank_a/scripts/extension.sql",
+    "argv": [
+      "build/release/duckdb",
+      "-no-init",
+      "-no-agent",
+      "-bail",
+      "-csv",
+      ":memory:",
+      "-f",
+      "experiment/results/functional/repeat_bank_a/scripts/extension.sql"
+    ]
+  },
+  {
+    "script": "experiment/results/functional/repeat_bank_a/scripts/databases.sql",
+    "argv": [
+      "build/release/duckdb",
+      "-no-init",
+      "-no-agent",
+      "-bail",
+      "-csv",
+      ":memory:",
+      "-f",
+      "experiment/results/functional/repeat_bank_a/scripts/databases.sql"
+    ]
+  },
+  {
+    "script": "experiment/results/functional/repeat_bank_a/scripts/schema.sql",
+    "argv": [
+      "build/release/duckdb",
+      "-no-init",
+      "-no-agent",
+      "-bail",
+      "-csv",
+      ":memory:",
+      "-f",
+      "experiment/results/functional/repeat_bank_a/scripts/schema.sql"
+    ]
+  },
+  {
+    "script": "experiment/results/functional/repeat_bank_a/scripts/copy.sql",
+    "argv": [
+      "build/release/duckdb",
+      "-no-init",
+      "-no-agent",
+      "-bail",
+      "-csv",
+      ":memory:",
+      "-f",
+      "experiment/results/functional/repeat_bank_a/scripts/copy.sql"
+    ]
+  },
+  {
+    "script": "experiment/results/functional/repeat_bank_a/scripts/load_count.sql",
+    "argv": [
+      "build/release/duckdb",
+      "-no-init",
+      "-no-agent",
+      "-bail",
+      "-csv",
+      ":memory:",
+      "-f",
+      "experiment/results/functional/repeat_bank_a/scripts/load_count.sql"
+    ]
+  },
+  {
+    "script": "experiment/results/functional/repeat_bank_a/scripts/snapshot.sql",
+    "argv": [
+      "build/release/duckdb",
+      "-no-init",
+      "-no-agent",
+      "-bail",
+      "-csv",
+      ":memory:",
+      "-f",
+      "experiment/results/functional/repeat_bank_a/scripts/snapshot.sql"
+    ]
+  },
+  {
+    "script": "experiment/results/functional/repeat_bank_a/scripts/branch_baseline.sql",
+    "argv": [
+      "build/release/duckdb",
+      "-no-init",
+      "-no-agent",
+      "-bail",
+      "-csv",
+      ":memory:",
+      "-f",
+      "experiment/results/functional/repeat_bank_a/scripts/branch_baseline.sql"
+    ]
+  },
+  {
+    "script": "experiment/results/functional/repeat_bank_a/scripts/branch_candidate.sql",
+    "argv": [
+      "build/release/duckdb",
+      "-no-init",
+      "-no-agent",
+      "-bail",
+      "-csv",
+      ":memory:",
+      "-f",
+      "experiment/results/functional/repeat_bank_a/scripts/branch_candidate.sql"
+    ]
+  },
+  {
+    "script": "experiment/results/functional/repeat_bank_a/scripts/verify_raw.sql",
+    "argv": [
+      "build/release/duckdb",
+      "-no-init",
+      "-no-agent",
+      "-bail",
+      "-csv",
+      ":memory:",
+      "-f",
+      "experiment/results/functional/repeat_bank_a/scripts/verify_raw.sql"
+    ]
+  },
+  {
+    "script": "experiment/results/functional/repeat_bank_a/scripts/baseline.sql",
+    "argv": [
+      "build/release/duckdb",
+      "-no-init",
+      "-no-agent",
+      "-bail",
+      "-csv",
+      ":memory:",
+      "-f",
+      "experiment/results/functional/repeat_bank_a/scripts/baseline.sql"
+    ]
+  },
+  {
+    "script": "experiment/results/functional/repeat_bank_a/scripts/baseline_count.sql",
+    "argv": [
+      "build/release/duckdb",
+      "-no-init",
+      "-no-agent",
+      "-bail",
+      "-csv",
+      ":memory:",
+      "-f",
+      "experiment/results/functional/repeat_bank_a/scripts/baseline_count.sql"
+    ]
+  },
+  {
+    "script": "experiment/results/functional/repeat_bank_a/scripts/candidate.sql",
+    "argv": [
+      "build/release/duckdb",
+      "-no-init",
+      "-no-agent",
+      "-bail",
+      "-csv",
+      ":memory:",
+      "-f",
+      "experiment/results/functional/repeat_bank_a/scripts/candidate.sql"
+    ]
+  },
+  {
+    "script": "experiment/results/functional/repeat_bank_a/scripts/candidate_count.sql",
+    "argv": [
+      "build/release/duckdb",
+      "-no-init",
+      "-no-agent",
+      "-bail",
+      "-csv",
+      ":memory:",
+      "-f",
+      "experiment/results/functional/repeat_bank_a/scripts/candidate_count.sql"
+    ]
+  },
+  {
+    "script": "experiment/results/functional/repeat_bank_a/scripts/isolation.sql",
+    "argv": [
+      "build/release/duckdb",
+      "-no-init",
+      "-no-agent",
+      "-bail",
+      "-csv",
+      ":memory:",
+      "-f",
+      "experiment/results/functional/repeat_bank_a/scripts/isolation.sql"
+    ]
+  },
+  {
+    "script": "experiment/results/functional/repeat_bank_a/scripts/boundaries.sql",
+    "argv": [
+      "build/release/duckdb",
+      "-no-init",
+      "-no-agent",
+      "-bail",
+      "-csv",
+      ":memory:",
+      "-f",
+      "experiment/results/functional/repeat_bank_a/scripts/boundaries.sql"
+    ]
+  },
+  {
+    "script": "experiment/results/functional/repeat_bank_a/scripts/histogram_baseline.sql",
+    "argv": [
+      "build/release/duckdb",
+      "-no-init",
+      "-no-agent",
+      "-bail",
+      "-csv",
+      ":memory:",
+      "-f",
+      "experiment/results/functional/repeat_bank_a/scripts/histogram_baseline.sql"
+    ]
+  },
+  {
+    "script": "experiment/results/functional/repeat_bank_a/scripts/histogram_candidate.sql",
+    "argv": [
+      "build/release/duckdb",
+      "-no-init",
+      "-no-agent",
+      "-bail",
+      "-csv",
+      ":memory:",
+      "-f",
+      "experiment/results/functional/repeat_bank_a/scripts/histogram_candidate.sql"
+    ]
+  }
+]

@@ -1,0 +1,565 @@
+[
+  {
+    "script": "experiment/results/functional/phase3/scripts/01_load.sql",
+    "argv": [
+      "build/release/duckdb",
+      "-no-init",
+      "-no-agent",
+      "-bail",
+      "-csv",
+      ":memory:",
+      "-f",
+      "experiment/results/functional/phase3/scripts/01_load.sql"
+    ]
+  },
+  {
+    "script": "experiment/results/functional/phase3/scripts/02_load_count.sql",
+    "argv": [
+      "build/release/duckdb",
+      "-no-init",
+      "-no-agent",
+      "-bail",
+      "-csv",
+      ":memory:",
+      "-f",
+      "experiment/results/functional/phase3/scripts/02_load_count.sql"
+    ]
+  },
+  {
+    "script": "experiment/results/functional/phase3/scripts/03_snapshot_raw.sql",
+    "argv": [
+      "build/release/duckdb",
+      "-no-init",
+      "-no-agent",
+      "-bail",
+      "-csv",
+      ":memory:",
+      "-f",
+      "experiment/results/functional/phase3/scripts/03_snapshot_raw.sql"
+    ]
+  },
+  {
+    "script": "experiment/results/functional/phase3/scripts/04_reopen_snapshot.sql",
+    "argv": [
+      "build/release/duckdb",
+      "-no-init",
+      "-no-agent",
+      "-bail",
+      "-csv",
+      ":memory:",
+      "-f",
+      "experiment/results/functional/phase3/scripts/04_reopen_snapshot.sql"
+    ]
+  },
+  {
+    "script": "experiment/results/functional/phase3/scripts/05_insert_extra.sql",
+    "argv": [
+      "build/release/duckdb",
+      "-no-init",
+      "-no-agent",
+      "-bail",
+      "-csv",
+      ":memory:",
+      "-f",
+      "experiment/results/functional/phase3/scripts/05_insert_extra.sql"
+    ]
+  },
+  {
+    "script": "experiment/results/functional/phase3/scripts/06_snapshot_revised.sql",
+    "argv": [
+      "build/release/duckdb",
+      "-no-init",
+      "-no-agent",
+      "-bail",
+      "-csv",
+      ":memory:",
+      "-f",
+      "experiment/results/functional/phase3/scripts/06_snapshot_revised.sql"
+    ]
+  },
+  {
+    "script": "experiment/results/functional/phase3/scripts/07_historical_at.sql",
+    "argv": [
+      "build/release/duckdb",
+      "-no-init",
+      "-no-agent",
+      "-bail",
+      "-csv",
+      ":memory:",
+      "-f",
+      "experiment/results/functional/phase3/scripts/07_historical_at.sql"
+    ]
+  },
+  {
+    "script": "experiment/results/functional/phase3/scripts/08_historical_attach.sql",
+    "argv": [
+      "build/release/duckdb",
+      "-no-init",
+      "-no-agent",
+      "-bail",
+      "-csv",
+      ":memory:",
+      "-f",
+      "experiment/results/functional/phase3/scripts/08_historical_attach.sql"
+    ]
+  },
+  {
+    "script": "experiment/results/functional/phase3/scripts/09_branch_work.sql",
+    "argv": [
+      "build/release/duckdb",
+      "-no-init",
+      "-no-agent",
+      "-bail",
+      "-csv",
+      ":memory:",
+      "-f",
+      "experiment/results/functional/phase3/scripts/09_branch_work.sql"
+    ]
+  },
+  {
+    "script": "experiment/results/functional/phase3/scripts/10_diverge_work.sql",
+    "argv": [
+      "build/release/duckdb",
+      "-no-init",
+      "-no-agent",
+      "-bail",
+      "-csv",
+      ":memory:",
+      "-f",
+      "experiment/results/functional/phase3/scripts/10_diverge_work.sql"
+    ]
+  },
+  {
+    "script": "experiment/results/functional/phase3/scripts/11_restore_while_attached.sql",
+    "argv": [
+      "build/release/duckdb",
+      "-no-init",
+      "-no-agent",
+      "-bail",
+      "-csv",
+      ":memory:",
+      "-f",
+      "experiment/results/functional/phase3/scripts/11_restore_while_attached.sql"
+    ],
+    "expect_error": true
+  },
+  {
+    "script": "experiment/results/functional/phase3/scripts/12_restore.sql",
+    "argv": [
+      "build/release/duckdb",
+      "-no-init",
+      "-no-agent",
+      "-bail",
+      "-csv",
+      ":memory:",
+      "-f",
+      "experiment/results/functional/phase3/scripts/12_restore.sql"
+    ]
+  },
+  {
+    "script": "experiment/results/functional/phase3/scripts/13_restore_compare.sql",
+    "argv": [
+      "build/release/duckdb",
+      "-no-init",
+      "-no-agent",
+      "-bail",
+      "-csv",
+      ":memory:",
+      "-f",
+      "experiment/results/functional/phase3/scripts/13_restore_compare.sql"
+    ]
+  },
+  {
+    "script": "experiment/results/functional/phase3/scripts/14_clone.sql",
+    "argv": [
+      "build/release/duckdb",
+      "-no-init",
+      "-no-agent",
+      "-bail",
+      "-csv",
+      ":memory:",
+      "-f",
+      "experiment/results/functional/phase3/scripts/14_clone.sql"
+    ]
+  },
+  {
+    "script": "experiment/results/functional/phase3/scripts/15_clone_write.sql",
+    "argv": [
+      "build/release/duckdb",
+      "-no-init",
+      "-no-agent",
+      "-bail",
+      "-csv",
+      ":memory:",
+      "-f",
+      "experiment/results/functional/phase3/scripts/15_clone_write.sql"
+    ]
+  },
+  {
+    "script": "experiment/results/functional/phase3/scripts/16_clone_isolation.sql",
+    "argv": [
+      "build/release/duckdb",
+      "-no-init",
+      "-no-agent",
+      "-bail",
+      "-csv",
+      ":memory:",
+      "-f",
+      "experiment/results/functional/phase3/scripts/16_clone_isolation.sql"
+    ]
+  },
+  {
+    "script": "experiment/results/functional/phase3/scripts/17_source_database_id.sql",
+    "argv": [
+      "build/release/duckdb",
+      "-no-init",
+      "-no-agent",
+      "-bail",
+      "-csv",
+      ":memory:",
+      "-f",
+      "experiment/results/functional/phase3/scripts/17_source_database_id.sql"
+    ]
+  },
+  {
+    "script": "experiment/results/functional/phase3/scripts/18_branch_drop_me.sql",
+    "argv": [
+      "build/release/duckdb",
+      "-no-init",
+      "-no-agent",
+      "-bail",
+      "-csv",
+      ":memory:",
+      "-f",
+      "experiment/results/functional/phase3/scripts/18_branch_drop_me.sql"
+    ]
+  },
+  {
+    "script": "experiment/results/functional/phase3/scripts/19_drop_branch.sql",
+    "argv": [
+      "build/release/duckdb",
+      "-no-init",
+      "-no-agent",
+      "-bail",
+      "-csv",
+      ":memory:",
+      "-f",
+      "experiment/results/functional/phase3/scripts/19_drop_branch.sql"
+    ]
+  },
+  {
+    "script": "experiment/results/functional/phase3/scripts/20_dropped_state.sql",
+    "argv": [
+      "build/release/duckdb",
+      "-no-init",
+      "-no-agent",
+      "-bail",
+      "-csv",
+      ":memory:",
+      "-f",
+      "experiment/results/functional/phase3/scripts/20_dropped_state.sql"
+    ]
+  },
+  {
+    "script": "experiment/results/functional/phase3/scripts/21_attach_dropped.sql",
+    "argv": [
+      "build/release/duckdb",
+      "-no-init",
+      "-no-agent",
+      "-bail",
+      "-csv",
+      ":memory:",
+      "-f",
+      "experiment/results/functional/phase3/scripts/21_attach_dropped.sql"
+    ],
+    "expect_error": true
+  },
+  {
+    "script": "experiment/results/functional/phase3/scripts/22_main_after_drop.sql",
+    "argv": [
+      "build/release/duckdb",
+      "-no-init",
+      "-no-agent",
+      "-bail",
+      "-csv",
+      ":memory:",
+      "-f",
+      "experiment/results/functional/phase3/scripts/22_main_after_drop.sql"
+    ]
+  },
+  {
+    "script": "experiment/results/functional/phase3/scripts/23_branch_side.sql",
+    "argv": [
+      "build/release/duckdb",
+      "-no-init",
+      "-no-agent",
+      "-bail",
+      "-csv",
+      ":memory:",
+      "-f",
+      "experiment/results/functional/phase3/scripts/23_branch_side.sql"
+    ]
+  },
+  {
+    "script": "experiment/results/functional/phase3/scripts/24_side_write.sql",
+    "argv": [
+      "build/release/duckdb",
+      "-no-init",
+      "-no-agent",
+      "-bail",
+      "-csv",
+      ":memory:",
+      "-f",
+      "experiment/results/functional/phase3/scripts/24_side_write.sql"
+    ]
+  },
+  {
+    "script": "experiment/results/functional/phase3/scripts/25_side_v.sql",
+    "argv": [
+      "build/release/duckdb",
+      "-no-init",
+      "-no-agent",
+      "-bail",
+      "-csv",
+      ":memory:",
+      "-f",
+      "experiment/results/functional/phase3/scripts/25_side_v.sql"
+    ]
+  },
+  {
+    "script": "experiment/results/functional/phase3/scripts/26_side_write_2.sql",
+    "argv": [
+      "build/release/duckdb",
+      "-no-init",
+      "-no-agent",
+      "-bail",
+      "-csv",
+      ":memory:",
+      "-f",
+      "experiment/results/functional/phase3/scripts/26_side_write_2.sql"
+    ]
+  },
+  {
+    "script": "experiment/results/functional/phase3/scripts/27_side_v2.sql",
+    "argv": [
+      "build/release/duckdb",
+      "-no-init",
+      "-no-agent",
+      "-bail",
+      "-csv",
+      ":memory:",
+      "-f",
+      "experiment/results/functional/phase3/scripts/27_side_v2.sql"
+    ]
+  },
+  {
+    "script": "experiment/results/functional/phase3/scripts/28_expire_dry_run.sql",
+    "argv": [
+      "build/release/duckdb",
+      "-no-init",
+      "-no-agent",
+      "-bail",
+      "-csv",
+      ":memory:",
+      "-f",
+      "experiment/results/functional/phase3/scripts/28_expire_dry_run.sql"
+    ]
+  },
+  {
+    "script": "experiment/results/functional/phase3/scripts/29_expire.sql",
+    "argv": [
+      "build/release/duckdb",
+      "-no-init",
+      "-no-agent",
+      "-bail",
+      "-csv",
+      ":memory:",
+      "-f",
+      "experiment/results/functional/phase3/scripts/29_expire.sql"
+    ]
+  },
+  {
+    "script": "experiment/results/functional/phase3/scripts/30_retired_flag.sql",
+    "argv": [
+      "build/release/duckdb",
+      "-no-init",
+      "-no-agent",
+      "-bail",
+      "-csv",
+      ":memory:",
+      "-f",
+      "experiment/results/functional/phase3/scripts/30_retired_flag.sql"
+    ]
+  },
+  {
+    "script": "experiment/results/functional/phase3/scripts/31_at_expired.sql",
+    "argv": [
+      "build/release/duckdb",
+      "-no-init",
+      "-no-agent",
+      "-bail",
+      "-csv",
+      ":memory:",
+      "-f",
+      "experiment/results/functional/phase3/scripts/31_at_expired.sql"
+    ],
+    "expect_error": true
+  },
+  {
+    "script": "experiment/results/functional/phase3/scripts/32_side_after_expiry.sql",
+    "argv": [
+      "build/release/duckdb",
+      "-no-init",
+      "-no-agent",
+      "-bail",
+      "-csv",
+      ":memory:",
+      "-f",
+      "experiment/results/functional/phase3/scripts/32_side_after_expiry.sql"
+    ]
+  },
+  {
+    "script": "experiment/results/functional/phase3/scripts/33_branch_garbage.sql",
+    "argv": [
+      "build/release/duckdb",
+      "-no-init",
+      "-no-agent",
+      "-bail",
+      "-csv",
+      ":memory:",
+      "-f",
+      "experiment/results/functional/phase3/scripts/33_branch_garbage.sql"
+    ]
+  },
+  {
+    "script": "experiment/results/functional/phase3/scripts/34_bulk_write.sql",
+    "argv": [
+      "build/release/duckdb",
+      "-no-init",
+      "-no-agent",
+      "-bail",
+      "-csv",
+      ":memory:",
+      "-f",
+      "experiment/results/functional/phase3/scripts/34_bulk_write.sql"
+    ]
+  },
+  {
+    "script": "experiment/results/functional/phase3/scripts/35_bulk_snapshot.sql",
+    "argv": [
+      "build/release/duckdb",
+      "-no-init",
+      "-no-agent",
+      "-bail",
+      "-csv",
+      ":memory:",
+      "-f",
+      "experiment/results/functional/phase3/scripts/35_bulk_snapshot.sql"
+    ]
+  },
+  {
+    "script": "experiment/results/functional/phase3/scripts/36_drop_garbage.sql",
+    "argv": [
+      "build/release/duckdb",
+      "-no-init",
+      "-no-agent",
+      "-bail",
+      "-csv",
+      ":memory:",
+      "-f",
+      "experiment/results/functional/phase3/scripts/36_drop_garbage.sql"
+    ]
+  },
+  {
+    "script": "experiment/results/functional/phase3/scripts/37_expire_bulk.sql",
+    "argv": [
+      "build/release/duckdb",
+      "-no-init",
+      "-no-agent",
+      "-bail",
+      "-csv",
+      ":memory:",
+      "-f",
+      "experiment/results/functional/phase3/scripts/37_expire_bulk.sql"
+    ]
+  },
+  {
+    "script": "experiment/results/functional/phase3/scripts/38_gc_dry_run.sql",
+    "argv": [
+      "build/release/duckdb",
+      "-no-init",
+      "-no-agent",
+      "-bail",
+      "-csv",
+      ":memory:",
+      "-f",
+      "experiment/results/functional/phase3/scripts/38_gc_dry_run.sql"
+    ]
+  },
+  {
+    "script": "experiment/results/functional/phase3/scripts/39_gc_cleanup.sql",
+    "argv": [
+      "build/release/duckdb",
+      "-no-init",
+      "-no-agent",
+      "-bail",
+      "-csv",
+      ":memory:",
+      "-f",
+      "experiment/results/functional/phase3/scripts/39_gc_cleanup.sql"
+    ]
+  },
+  {
+    "script": "experiment/results/functional/phase3/scripts/40_retained_after_gc.sql",
+    "argv": [
+      "build/release/duckdb",
+      "-no-init",
+      "-no-agent",
+      "-bail",
+      "-csv",
+      ":memory:",
+      "-f",
+      "experiment/results/functional/phase3/scripts/40_retained_after_gc.sql"
+    ]
+  },
+  {
+    "script": "experiment/results/functional/phase3/scripts/41_lone_create.sql",
+    "argv": [
+      "build/release/duckdb",
+      "-no-init",
+      "-no-agent",
+      "-bail",
+      "-csv",
+      ":memory:",
+      "-f",
+      "experiment/results/functional/phase3/scripts/41_lone_create.sql"
+    ]
+  },
+  {
+    "script": "experiment/results/functional/phase3/scripts/42_drop_last_branch.sql",
+    "argv": [
+      "build/release/duckdb",
+      "-no-init",
+      "-no-agent",
+      "-bail",
+      "-csv",
+      ":memory:",
+      "-f",
+      "experiment/results/functional/phase3/scripts/42_drop_last_branch.sql"
+    ],
+    "expect_error": true
+  },
+  {
+    "script": "experiment/results/functional/phase3/scripts/43_lone_state.sql",
+    "argv": [
+      "build/release/duckdb",
+      "-no-init",
+      "-no-agent",
+      "-bail",
+      "-csv",
+      ":memory:",
+      "-f",
+      "experiment/results/functional/phase3/scripts/43_lone_state.sql"
+    ]
+  }
+]

@@ -1,0 +1,2 @@
+test_id,capability,command,result,status,notes
+OS01,"S3, shared writers, WAL shipping, and followers",not run,not executed,UNVERIFIED,These product capabilities were outside this MVP execution. No result was produced.

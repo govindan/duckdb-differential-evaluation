@@ -1,0 +1,7 @@
+transaction_id,transaction_amount,baseline_classification,candidate_classification,comparison
+BND-999.99,999.99,LOW,LOW,unchanged
+BND-1000.00,1000.00,MEDIUM,MEDIUM,unchanged
+BND-4999.99,4999.99,MEDIUM,MEDIUM,unchanged
+BND-5000.00,5000.00,MEDIUM,HIGH,changed
+BND-9999.99,9999.99,MEDIUM,HIGH,changed
+BND-10000.00,10000.00,HIGH,HIGH,unchanged

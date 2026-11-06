@@ -1,0 +1,3 @@
+check,before,after,result
+Baseline output fingerprint unchanged after candidate processing,65934bf740f50d94ef0b59e99ef0a204,65934bf740f50d94ef0b59e99ef0a204,pass
+Raw input and shared snapshot unchanged after candidate processing,9ef5daa48404d971abef48dcb20730e7,"main=9ef5daa48404d971abef48dcb20730e7, baseline=9ef5daa48404d971abef48dcb20730e7, candidate=9ef5daa48404d971abef48dcb20730e7, snapshot=9ef5daa48404d971abef48dcb20730e7",pass

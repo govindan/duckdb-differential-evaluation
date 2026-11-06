@@ -1,0 +1,347 @@
+workload,system,dataset_size,changed_percent,repetition,warmup,operation,timing_source,elapsed_ns,checkpoint,repository_bytes,database_bytes,wal_bytes,segment_bytes,journal_bytes,temp_bytes,state_storage_bytes,intended_changed_rows,actual_changed_rows,added_records,missing_records,changed_records,unchanged_records,deleted_objects,candidate_bytes,notes
+business,differential,10000000,,0,true,before_load,,,before_load,0,0,0,0,0,0,0,,,,,,,,,storage checkpoint with no timed operation
+business,differential,10000000,,0,true,load,duckdb_epoch_ns,4744665000,after_load,674686065,1884160,0,672801905,0,0,674686065,,,,,,,,,in-process epoch_ns delta; CLI startup is excluded; differential_auto_gc=false
+business,differential,10000000,,0,true,snapshot,duckdb_epoch_ns,5494000,before_branch,674686065,1884160,0,672801905,0,0,674686065,,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+business,differential,10000000,,0,true,branch_creation,duckdb_epoch_ns,15713000,after_branch,675427441,2625536,0,672801905,0,0,675427441,,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+business,differential,10000000,,0,true,baseline_transform,duckdb_epoch_ns,182711000,,,,,,,,,,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+business,differential,10000000,,0,true,baseline_snapshot,duckdb_epoch_ns,5398000,after_baseline_snapshot,878838814,3309568,0,875529246,0,0,878838814,,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+business,differential,10000000,,0,true,candidate_transform,duckdb_epoch_ns,182504000,,,,,,,,,,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+business,differential,10000000,,0,true,candidate_snapshot,duckdb_epoch_ns,6061000,after_candidate_snapshot,1082827814,4046848,0,1078780966,0,0,1082827814,,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+business,differential,10000000,,0,true,comparison,duckdb_epoch_ns,412802000,after_comparison,1082827814,4046848,0,1078780966,0,0,1082827814,,,0,0,1998489,8001511,,,in-process epoch_ns delta; CLI startup is excluded; actual_changed_percent=19.9849
+business,differential,10000000,,0,true,branch_cleanup,duckdb_epoch_ns,6247000,after_branch_deletion,1082827814,4046848,0,1078780966,0,0,1082827814,,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+business,differential,10000000,,0,true,snapshot_expiry,duckdb_epoch_ns,3336000,after_expiry,1082827814,4046848,0,1078780966,0,0,1082827814,,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+business,differential,10000000,,0,true,garbage_collection,duckdb_epoch_ns,46736000,after_gc,816374834,4046848,0,812327986,0,0,816374834,,,,,,,515,135004160,in-process epoch_ns delta; CLI startup is excluded
+business,native,10000000,,0,true,before_load,,,before_load,0,0,0,0,0,0,0,,,,,,,,,storage checkpoint with no timed operation
+business,native,10000000,,0,true,load,duckdb_epoch_ns,4430323000,,,,,,,,,,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+business,native,10000000,,0,true,load_checkpoint,duckdb_epoch_ns,545000,after_load,0,566505472,0,0,0,0,566505472,,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+business,native,10000000,,0,true,database_copy,python_perf_counter,74893250,after_copy,0,1133010944,0,0,0,0,1133010944,,,,,,,,,python perf_counter including fsync of the destination
+business,native,10000000,,0,true,baseline_transform,duckdb_epoch_ns,161594000,,,,,,,,,,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+business,native,10000000,,0,true,baseline_checkpoint,duckdb_epoch_ns,322105000,after_baseline_transform,0,1334861824,0,0,0,0,1334861824,,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+business,native,10000000,,0,true,candidate_transform,duckdb_epoch_ns,150592000,,,,,,,,,,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+business,native,10000000,,0,true,candidate_checkpoint,duckdb_epoch_ns,294025000,after_candidate_snapshot,0,1535926272,0,0,0,0,1535926272,,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+business,native,10000000,,0,true,comparison,duckdb_epoch_ns,399166000,after_comparison,0,1535926272,0,0,0,0,1535926272,,,0,0,1998489,8001511,,,in-process epoch_ns delta; CLI startup is excluded; actual_changed_percent=19.9849
+business,native,10000000,,0,true,database_cleanup,python_perf_counter,4374708,after_database_cleanup,0,768356352,0,0,0,0,768356352,,,,,,,,,python perf_counter around unlink of the candidate database files
+controlled,differential,10000000,1,0,true,before_load,,,before_load,0,0,0,0,0,0,0,100000,,,,,,,,storage checkpoint with no timed operation
+controlled,differential,10000000,1,0,true,load,duckdb_epoch_ns,2894392000,after_load,130760564,696320,0,130064244,0,0,130760564,100000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,1,0,true,snapshot,duckdb_epoch_ns,5452000,before_branch,130760564,696320,0,130064244,0,0,130760564,100000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,1,0,true,branch_creation,duckdb_epoch_ns,4592000,after_branch,130846580,782336,0,130064244,0,0,130846580,100000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,1,0,true,controlled_update,duckdb_epoch_ns,18802000,,,,,,,,,100000,100000,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,1,0,true,snapshot_after_update,duckdb_epoch_ns,4866000,after_candidate_snapshot,136102188,978944,0,135123244,0,0,136102188,100000,100000,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,1,0,true,branch_cleanup,duckdb_epoch_ns,5257000,after_branch_deletion,136102188,978944,0,135123244,0,0,136102188,100000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,1,0,true,snapshot_expiry,duckdb_epoch_ns,3181000,after_expiry,136102188,978944,0,135123244,0,0,136102188,100000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,1,0,true,garbage_collection,duckdb_epoch_ns,10287000,after_gc,131047284,983040,0,130064244,0,0,131047284,100000,,,,,,5,1310720,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,1,0,true,before_load,,,before_load,0,0,0,0,0,0,0,100000,,,,,,,,storage checkpoint with no timed operation
+controlled,native,10000000,1,0,true,load,duckdb_epoch_ns,2808525000,,,,,,,,,100000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,1,0,true,load_checkpoint,duckdb_epoch_ns,498000,after_load,0,129511424,0,0,0,0,129511424,100000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,1,0,true,database_copy,python_perf_counter,18504708,after_copy,0,259022848,0,0,0,0,259022848,100000,,,,,,,,python perf_counter including fsync of the destination
+controlled,native,10000000,1,0,true,controlled_update,duckdb_epoch_ns,12751000,,,,,,,,,100000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,1,0,true,update_checkpoint,duckdb_epoch_ns,12232000,after_candidate_snapshot,0,259547136,0,0,0,0,259547136,100000,100000,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,1,0,true,database_cleanup,python_perf_counter,845667,after_database_cleanup,0,129511424,0,0,0,0,129511424,100000,,,,,,,,python perf_counter around unlink of the updated copy
+controlled,differential,10000000,10,0,true,before_load,,,before_load,0,0,0,0,0,0,0,1000000,,,,,,,,storage checkpoint with no timed operation
+controlled,differential,10000000,10,0,true,load,duckdb_epoch_ns,2900112000,after_load,130760567,696320,0,130064247,0,0,130760567,1000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,10,0,true,snapshot,duckdb_epoch_ns,5682000,before_branch,130760567,696320,0,130064247,0,0,130760567,1000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,10,0,true,branch_creation,duckdb_epoch_ns,4553000,after_branch,130838391,774144,0,130064247,0,0,130838391,1000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,10,0,true,controlled_update,duckdb_epoch_ns,38315000,,,,,,,,,1000000,1000000,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,10,0,true,snapshot_after_update,duckdb_epoch_ns,5133000,after_candidate_snapshot,137339943,978944,0,136360999,0,0,137339943,1000000,1000000,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,10,0,true,branch_cleanup,duckdb_epoch_ns,5609000,after_branch_deletion,137339943,978944,0,136360999,0,0,137339943,1000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,10,0,true,snapshot_expiry,duckdb_epoch_ns,3259000,after_expiry,137339943,978944,0,136360999,0,0,137339943,1000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,10,0,true,garbage_collection,duckdb_epoch_ns,11007000,after_gc,131047287,983040,0,130064247,0,0,131047287,1000000,,,,,,25,6553600,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,10,0,true,before_load,,,before_load,0,0,0,0,0,0,0,1000000,,,,,,,,storage checkpoint with no timed operation
+controlled,native,10000000,10,0,true,load,duckdb_epoch_ns,2832708000,,,,,,,,,1000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,10,0,true,load_checkpoint,duckdb_epoch_ns,671000,after_load,0,129511424,0,0,0,0,129511424,1000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,10,0,true,database_copy,python_perf_counter,20881667,after_copy,0,259022848,0,0,0,0,259022848,1000000,,,,,,,,python perf_counter including fsync of the destination
+controlled,native,10000000,10,0,true,controlled_update,duckdb_epoch_ns,28814000,,,,,,,,,1000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,10,0,true,update_checkpoint,duckdb_epoch_ns,516000,after_candidate_snapshot,0,264790016,0,0,0,0,264790016,1000000,1000000,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,10,0,true,database_cleanup,python_perf_counter,900709,after_database_cleanup,0,129511424,0,0,0,0,129511424,1000000,,,,,,,,python perf_counter around unlink of the updated copy
+controlled,differential,10000000,50,0,true,before_load,,,before_load,0,0,0,0,0,0,0,5000000,,,,,,,,storage checkpoint with no timed operation
+controlled,differential,10000000,50,0,true,load,duckdb_epoch_ns,3088936000,after_load,130776950,712704,0,130064246,0,0,130776950,5000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,50,0,true,snapshot,duckdb_epoch_ns,5927000,before_branch,130776950,712704,0,130064246,0,0,130776950,5000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,50,0,true,branch_creation,duckdb_epoch_ns,4639000,after_branch,130854774,790528,0,130064246,0,0,130854774,5000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,50,0,true,controlled_update,duckdb_epoch_ns,123785000,,,,,,,,,5000000,5000000,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,50,0,true,snapshot_after_update,duckdb_epoch_ns,5532000,after_candidate_snapshot,160998662,1040384,0,159958278,0,0,160998662,5000000,5000000,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,50,0,true,branch_cleanup,duckdb_epoch_ns,5618000,after_branch_deletion,160998662,1040384,0,159958278,0,0,160998662,5000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,50,0,true,snapshot_expiry,duckdb_epoch_ns,3311000,after_expiry,160998662,1040384,0,159958278,0,0,160998662,5000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,50,0,true,garbage_collection,duckdb_epoch_ns,13714000,after_gc,131108726,1044480,0,130064246,0,0,131108726,5000000,,,,,,115,30146560,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,50,0,true,before_load,,,before_load,0,0,0,0,0,0,0,5000000,,,,,,,,storage checkpoint with no timed operation
+controlled,native,10000000,50,0,true,load,duckdb_epoch_ns,2913102000,,,,,,,,,5000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,50,0,true,load_checkpoint,duckdb_epoch_ns,520000,after_load,0,129511424,0,0,0,0,129511424,5000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,50,0,true,database_copy,python_perf_counter,18394791,after_copy,0,259022848,0,0,0,0,259022848,5000000,,,,,,,,python perf_counter including fsync of the destination
+controlled,native,10000000,50,0,true,controlled_update,duckdb_epoch_ns,105456000,,,,,,,,,5000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,50,0,true,update_checkpoint,duckdb_epoch_ns,532000,after_candidate_snapshot,0,288382976,0,0,0,0,288382976,5000000,5000000,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,50,0,true,database_cleanup,python_perf_counter,1087916,after_database_cleanup,0,129511424,0,0,0,0,129511424,5000000,,,,,,,,python perf_counter around unlink of the updated copy
+controlled,differential,10000000,100,0,true,before_load,,,before_load,0,0,0,0,0,0,0,10000000,,,,,,,,storage checkpoint with no timed operation
+controlled,differential,10000000,100,0,true,load,duckdb_epoch_ns,2911751000,after_load,130772858,708608,0,130064250,0,0,130772858,10000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,100,0,true,snapshot,duckdb_epoch_ns,5553000,before_branch,130772858,708608,0,130064250,0,0,130772858,10000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,100,0,true,branch_creation,duckdb_epoch_ns,4225000,after_branch,130858874,794624,0,130064250,0,0,130858874,10000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,100,0,true,controlled_update,duckdb_epoch_ns,231221000,,,,,,,,,10000000,10000000,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,100,0,true,snapshot_after_update,duckdb_epoch_ns,4974000,after_candidate_snapshot,191228570,1118208,0,190110362,0,0,191228570,10000000,10000000,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,100,0,true,branch_cleanup,duckdb_epoch_ns,5299000,after_branch_deletion,191228570,1118208,0,190110362,0,0,191228570,10000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,100,0,true,snapshot_expiry,duckdb_epoch_ns,3215000,after_expiry,191228570,1118208,0,190110362,0,0,191228570,10000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,100,0,true,garbage_collection,duckdb_epoch_ns,17399000,after_gc,131186554,1122304,0,130064250,0,0,131186554,10000000,,,,,,230,60293120,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,100,0,true,before_load,,,before_load,0,0,0,0,0,0,0,10000000,,,,,,,,storage checkpoint with no timed operation
+controlled,native,10000000,100,0,true,load,duckdb_epoch_ns,2802339000,,,,,,,,,10000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,100,0,true,load_checkpoint,duckdb_epoch_ns,538000,after_load,0,129511424,0,0,0,0,129511424,10000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,100,0,true,database_copy,python_perf_counter,18549666,after_copy,0,259022848,0,0,0,0,259022848,10000000,,,,,,,,python perf_counter including fsync of the destination
+controlled,native,10000000,100,0,true,controlled_update,duckdb_epoch_ns,220593000,,,,,,,,,10000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,100,0,true,update_checkpoint,duckdb_epoch_ns,537000,after_candidate_snapshot,0,318529536,0,0,0,0,318529536,10000000,10000000,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,100,0,true,database_cleanup,python_perf_counter,1341833,after_database_cleanup,0,129511424,0,0,0,0,129511424,10000000,,,,,,,,python perf_counter around unlink of the updated copy
+business,differential,10000000,,1,false,before_load,,,before_load,0,0,0,0,0,0,0,,,,,,,,,storage checkpoint with no timed operation
+business,differential,10000000,,1,false,load,duckdb_epoch_ns,4666279000,after_load,674133013,1855488,0,672277525,0,0,674133013,,,,,,,,,in-process epoch_ns delta; CLI startup is excluded; differential_auto_gc=false
+business,differential,10000000,,1,false,snapshot,duckdb_epoch_ns,5607000,before_branch,674133013,1855488,0,672277525,0,0,674133013,,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+business,differential,10000000,,1,false,branch_creation,duckdb_epoch_ns,12475000,after_branch,674898965,2621440,0,672277525,0,0,674898965,,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+business,differential,10000000,,1,false,baseline_transform,duckdb_epoch_ns,192098000,,,,,,,,,,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+business,differential,10000000,,1,false,baseline_snapshot,duckdb_epoch_ns,5850000,after_baseline_snapshot,877568830,3350528,0,874218302,0,0,877568830,,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+business,differential,10000000,,1,false,candidate_transform,duckdb_epoch_ns,189299000,,,,,,,,,,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+business,differential,10000000,,1,false,candidate_snapshot,duckdb_epoch_ns,5602000,after_candidate_snapshot,1081246491,4038656,0,1077207835,0,0,1081246491,,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+business,differential,10000000,,1,false,comparison,duckdb_epoch_ns,429942000,after_comparison,1081246491,4038656,0,1077207835,0,0,1081246491,,,0,0,1998489,8001511,,,in-process epoch_ns delta; CLI startup is excluded; actual_changed_percent=19.9849
+business,differential,10000000,,1,false,branch_cleanup,duckdb_epoch_ns,6129000,after_branch_deletion,1081246491,4038656,0,1077207835,0,0,1081246491,,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+business,differential,10000000,,1,false,snapshot_expiry,duckdb_epoch_ns,3304000,after_expiry,1081246491,4038656,0,1077207835,0,0,1081246491,,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+business,differential,10000000,,1,false,garbage_collection,duckdb_epoch_ns,50822000,after_gc,817939806,4038656,0,813901150,0,0,817939806,,,,,,,508,133169152,in-process epoch_ns delta; CLI startup is excluded
+business,native,10000000,,1,false,before_load,,,before_load,0,0,0,0,0,0,0,,,,,,,,,storage checkpoint with no timed operation
+business,native,10000000,,1,false,load,duckdb_epoch_ns,4422258000,,,,,,,,,,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+business,native,10000000,,1,false,load_checkpoint,duckdb_epoch_ns,556000,after_load,0,565981184,0,0,0,0,565981184,,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+business,native,10000000,,1,false,database_copy,python_perf_counter,77625458,after_copy,0,1131962368,0,0,0,0,1131962368,,,,,,,,,python perf_counter including fsync of the destination
+business,native,10000000,,1,false,logical_database_copy,duckdb_epoch_ns,4304469000,logical_copy,0,562049024,0,0,0,0,562049024,,,,,,,,,COPY FROM DATABASE logical-equivalence check. Its bytes are not included in the filesystem-copy control total.
+business,native,10000000,,1,false,baseline_transform,duckdb_epoch_ns,158234000,,,,,,,,,,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+business,native,10000000,,1,false,baseline_checkpoint,duckdb_epoch_ns,296808000,after_baseline_transform,0,1333551104,0,0,0,0,1333551104,,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+business,native,10000000,,1,false,candidate_transform,duckdb_epoch_ns,160000000,,,,,,,,,,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+business,native,10000000,,1,false,candidate_checkpoint,duckdb_epoch_ns,310316000,after_candidate_snapshot,0,1535401984,0,0,0,0,1535401984,,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+business,native,10000000,,1,false,comparison,duckdb_epoch_ns,400791000,after_comparison,0,1535401984,0,0,0,0,1535401984,,,0,0,1998489,8001511,,,in-process epoch_ns delta; CLI startup is excluded; actual_changed_percent=19.9849
+business,native,10000000,,1,false,database_cleanup,python_perf_counter,5258875,after_database_cleanup,0,767569920,0,0,0,0,767569920,,,,,,,,,python perf_counter around unlink of the candidate database files
+controlled,differential,10000000,1,1,false,before_load,,,before_load,0,0,0,0,0,0,0,100000,,,,,,,,storage checkpoint with no timed operation
+controlled,differential,10000000,1,1,false,load,duckdb_epoch_ns,2902877000,after_load,130764660,700416,0,130064244,0,0,130764660,100000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,1,1,false,snapshot,duckdb_epoch_ns,5658000,before_branch,130764660,700416,0,130064244,0,0,130764660,100000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,1,1,false,branch_creation,duckdb_epoch_ns,4566000,after_branch,130842484,778240,0,130064244,0,0,130842484,100000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,1,1,false,controlled_update,duckdb_epoch_ns,18760000,,,,,,,,,100000,100000,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,1,1,false,snapshot_after_update,duckdb_epoch_ns,5007000,after_candidate_snapshot,136089900,966656,0,135123244,0,0,136089900,100000,100000,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,1,1,false,branch_cleanup,duckdb_epoch_ns,5496000,after_branch_deletion,136089900,966656,0,135123244,0,0,136089900,100000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,1,1,false,snapshot_expiry,duckdb_epoch_ns,3291000,after_expiry,136089900,966656,0,135123244,0,0,136089900,100000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,1,1,false,garbage_collection,duckdb_epoch_ns,9971000,after_gc,131034996,970752,0,130064244,0,0,131034996,100000,,,,,,5,1310720,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,1,1,false,before_load,,,before_load,0,0,0,0,0,0,0,100000,,,,,,,,storage checkpoint with no timed operation
+controlled,native,10000000,1,1,false,load,duckdb_epoch_ns,2801117000,,,,,,,,,100000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,1,1,false,load_checkpoint,duckdb_epoch_ns,557000,after_load,0,129511424,0,0,0,0,129511424,100000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,1,1,false,database_copy,python_perf_counter,15767375,after_copy,0,259022848,0,0,0,0,259022848,100000,,,,,,,,python perf_counter including fsync of the destination
+controlled,native,10000000,1,1,false,logical_database_copy,duckdb_epoch_ns,1328344000,logical_copy,0,129511424,0,0,0,0,129511424,100000,,,,,,,,COPY FROM DATABASE logical-equivalence check. Its bytes are not included in the filesystem-copy control total.
+controlled,native,10000000,1,1,false,controlled_update,duckdb_epoch_ns,12653000,,,,,,,,,100000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,1,1,false,update_checkpoint,duckdb_epoch_ns,11754000,after_candidate_snapshot,0,259547136,0,0,0,0,259547136,100000,100000,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,1,1,false,database_cleanup,python_perf_counter,929250,after_database_cleanup,0,129511424,0,0,0,0,129511424,100000,,,,,,,,python perf_counter around unlink of the updated copy
+controlled,differential,10000000,10,1,false,before_load,,,before_load,0,0,0,0,0,0,0,1000000,,,,,,,,storage checkpoint with no timed operation
+controlled,differential,10000000,10,1,false,load,duckdb_epoch_ns,2894855000,after_load,130756472,692224,0,130064248,0,0,130756472,1000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,10,1,false,snapshot,duckdb_epoch_ns,5482000,before_branch,130756472,692224,0,130064248,0,0,130756472,1000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,10,1,false,branch_creation,duckdb_epoch_ns,4442000,after_branch,130838392,774144,0,130064248,0,0,130838392,1000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,10,1,false,controlled_update,duckdb_epoch_ns,39563000,,,,,,,,,1000000,1000000,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,10,1,false,snapshot_after_update,duckdb_epoch_ns,5307000,after_candidate_snapshot,137327656,966656,0,136361000,0,0,137327656,1000000,1000000,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,10,1,false,branch_cleanup,duckdb_epoch_ns,5658000,after_branch_deletion,137327656,966656,0,136361000,0,0,137327656,1000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,10,1,false,snapshot_expiry,duckdb_epoch_ns,3458000,after_expiry,137327656,966656,0,136361000,0,0,137327656,1000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,10,1,false,garbage_collection,duckdb_epoch_ns,10505000,after_gc,131035000,970752,0,130064248,0,0,131035000,1000000,,,,,,25,6553600,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,10,1,false,before_load,,,before_load,0,0,0,0,0,0,0,1000000,,,,,,,,storage checkpoint with no timed operation
+controlled,native,10000000,10,1,false,load,duckdb_epoch_ns,2824889000,,,,,,,,,1000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,10,1,false,load_checkpoint,duckdb_epoch_ns,526000,after_load,0,129511424,0,0,0,0,129511424,1000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,10,1,false,database_copy,python_perf_counter,15561791,after_copy,0,259022848,0,0,0,0,259022848,1000000,,,,,,,,python perf_counter including fsync of the destination
+controlled,native,10000000,10,1,false,controlled_update,duckdb_epoch_ns,29471000,,,,,,,,,1000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,10,1,false,update_checkpoint,duckdb_epoch_ns,526000,after_candidate_snapshot,0,264790016,0,0,0,0,264790016,1000000,1000000,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,10,1,false,database_cleanup,python_perf_counter,974167,after_database_cleanup,0,129511424,0,0,0,0,129511424,1000000,,,,,,,,python perf_counter around unlink of the updated copy
+controlled,differential,10000000,50,1,false,before_load,,,before_load,0,0,0,0,0,0,0,5000000,,,,,,,,storage checkpoint with no timed operation
+controlled,differential,10000000,50,1,false,load,duckdb_epoch_ns,2911553000,after_load,130776952,712704,0,130064248,0,0,130776952,5000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,50,1,false,snapshot,duckdb_epoch_ns,14606000,before_branch,130776952,712704,0,130064248,0,0,130776952,5000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,50,1,false,branch_creation,duckdb_epoch_ns,4660000,after_branch,130854776,790528,0,130064248,0,0,130854776,5000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,50,1,false,controlled_update,duckdb_epoch_ns,124525000,,,,,,,,,5000000,5000000,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,50,1,false,snapshot_after_update,duckdb_epoch_ns,5256000,after_candidate_snapshot,161002760,1044480,0,159958280,0,0,161002760,5000000,5000000,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,50,1,false,branch_cleanup,duckdb_epoch_ns,5329000,after_branch_deletion,161002760,1044480,0,159958280,0,0,161002760,5000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,50,1,false,snapshot_expiry,duckdb_epoch_ns,3574000,after_expiry,161002760,1044480,0,159958280,0,0,161002760,5000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,50,1,false,garbage_collection,duckdb_epoch_ns,13198000,after_gc,131112824,1048576,0,130064248,0,0,131112824,5000000,,,,,,115,30146560,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,50,1,false,before_load,,,before_load,0,0,0,0,0,0,0,5000000,,,,,,,,storage checkpoint with no timed operation
+controlled,native,10000000,50,1,false,load,duckdb_epoch_ns,2799746000,,,,,,,,,5000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,50,1,false,load_checkpoint,duckdb_epoch_ns,548000,after_load,0,129511424,0,0,0,0,129511424,5000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,50,1,false,database_copy,python_perf_counter,15807125,after_copy,0,259022848,0,0,0,0,259022848,5000000,,,,,,,,python perf_counter including fsync of the destination
+controlled,native,10000000,50,1,false,controlled_update,duckdb_epoch_ns,112083000,,,,,,,,,5000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,50,1,false,update_checkpoint,duckdb_epoch_ns,499000,after_candidate_snapshot,0,288382976,0,0,0,0,288382976,5000000,5000000,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,50,1,false,database_cleanup,python_perf_counter,1250917,after_database_cleanup,0,129511424,0,0,0,0,129511424,5000000,,,,,,,,python perf_counter around unlink of the updated copy
+controlled,differential,10000000,100,1,false,before_load,,,before_load,0,0,0,0,0,0,0,10000000,,,,,,,,storage checkpoint with no timed operation
+controlled,differential,10000000,100,1,false,load,duckdb_epoch_ns,2902727000,after_load,130781046,716800,0,130064246,0,0,130781046,10000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,100,1,false,snapshot,duckdb_epoch_ns,5762000,before_branch,130781046,716800,0,130064246,0,0,130781046,10000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,100,1,false,branch_creation,duckdb_epoch_ns,4427000,after_branch,130867062,802816,0,130064246,0,0,130867062,10000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,100,1,false,controlled_update,duckdb_epoch_ns,233461000,,,,,,,,,10000000,10000000,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,100,1,false,snapshot_after_update,duckdb_epoch_ns,5200000,after_candidate_snapshot,191253142,1142784,0,190110358,0,0,191253142,10000000,10000000,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,100,1,false,branch_cleanup,duckdb_epoch_ns,5384000,after_branch_deletion,191253142,1142784,0,190110358,0,0,191253142,10000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,100,1,false,snapshot_expiry,duckdb_epoch_ns,3313000,after_expiry,191253142,1142784,0,190110358,0,0,191253142,10000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,100,1,false,garbage_collection,duckdb_epoch_ns,17000000,after_gc,131211126,1146880,0,130064246,0,0,131211126,10000000,,,,,,230,60293120,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,100,1,false,before_load,,,before_load,0,0,0,0,0,0,0,10000000,,,,,,,,storage checkpoint with no timed operation
+controlled,native,10000000,100,1,false,load,duckdb_epoch_ns,2826716000,,,,,,,,,10000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,100,1,false,load_checkpoint,duckdb_epoch_ns,531000,after_load,0,129511424,0,0,0,0,129511424,10000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,100,1,false,database_copy,python_perf_counter,16182625,after_copy,0,259022848,0,0,0,0,259022848,10000000,,,,,,,,python perf_counter including fsync of the destination
+controlled,native,10000000,100,1,false,controlled_update,duckdb_epoch_ns,207118000,,,,,,,,,10000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,100,1,false,update_checkpoint,duckdb_epoch_ns,557000,after_candidate_snapshot,0,318529536,0,0,0,0,318529536,10000000,10000000,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,100,1,false,database_cleanup,python_perf_counter,1389958,after_database_cleanup,0,129511424,0,0,0,0,129511424,10000000,,,,,,,,python perf_counter around unlink of the updated copy
+business,differential,10000000,,2,false,before_load,,,before_load,0,0,0,0,0,0,0,,,,,,,,,storage checkpoint with no timed operation
+business,differential,10000000,,2,false,load,duckdb_epoch_ns,4725692000,after_load,673891298,1875968,0,672015330,0,0,673891298,,,,,,,,,in-process epoch_ns delta; CLI startup is excluded; differential_auto_gc=false
+business,differential,10000000,,2,false,snapshot,duckdb_epoch_ns,5869000,before_branch,673891298,1875968,0,672015330,0,0,673891298,,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+business,differential,10000000,,2,false,branch_creation,duckdb_epoch_ns,12009000,after_branch,674640866,2625536,0,672015330,0,0,674640866,,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+business,differential,10000000,,2,false,baseline_transform,duckdb_epoch_ns,179848000,,,,,,,,,,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+business,differential,10000000,,2,false,baseline_snapshot,duckdb_epoch_ns,5666000,after_baseline_snapshot,877806426,3325952,0,874480474,0,0,877806426,,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+business,differential,10000000,,2,false,candidate_transform,duckdb_epoch_ns,183026000,,,,,,,,,,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+business,differential,10000000,,2,false,candidate_snapshot,duckdb_epoch_ns,5401000,after_candidate_snapshot,1081512753,4042752,0,1077470001,0,0,1081512753,,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+business,differential,10000000,,2,false,comparison,duckdb_epoch_ns,413508000,after_comparison,1081512753,4042752,0,1077470001,0,0,1081512753,,,0,0,1998489,8001511,,,in-process epoch_ns delta; CLI startup is excluded; actual_changed_percent=19.9849
+business,differential,10000000,,2,false,branch_cleanup,duckdb_epoch_ns,5927000,after_branch_deletion,1081512753,4042752,0,1077470001,0,0,1081512753,,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+business,differential,10000000,,2,false,snapshot_expiry,duckdb_epoch_ns,3452000,after_expiry,1081512753,4042752,0,1077470001,0,0,1081512753,,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+business,differential,10000000,,2,false,garbage_collection,duckdb_epoch_ns,51600000,after_gc,817419501,4042752,0,813376749,0,0,817419501,,,,,,,497,130285568,in-process epoch_ns delta; CLI startup is excluded
+business,native,10000000,,2,false,before_load,,,before_load,0,0,0,0,0,0,0,,,,,,,,,storage checkpoint with no timed operation
+business,native,10000000,,2,false,load,duckdb_epoch_ns,4437246000,,,,,,,,,,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+business,native,10000000,,2,false,load_checkpoint,duckdb_epoch_ns,521000,after_load,0,565981184,0,0,0,0,565981184,,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+business,native,10000000,,2,false,database_copy,python_perf_counter,78245875,after_copy,0,1131962368,0,0,0,0,1131962368,,,,,,,,,python perf_counter including fsync of the destination
+business,native,10000000,,2,false,baseline_transform,duckdb_epoch_ns,147424000,,,,,,,,,,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+business,native,10000000,,2,false,baseline_checkpoint,duckdb_epoch_ns,298898000,after_baseline_transform,0,1333813248,0,0,0,0,1333813248,,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+business,native,10000000,,2,false,candidate_transform,duckdb_epoch_ns,155920000,,,,,,,,,,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+business,native,10000000,,2,false,candidate_checkpoint,duckdb_epoch_ns,304467000,after_candidate_snapshot,0,1535401984,0,0,0,0,1535401984,,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+business,native,10000000,,2,false,comparison,duckdb_epoch_ns,402403000,after_comparison,0,1535401984,0,0,0,0,1535401984,,,0,0,1998489,8001511,,,in-process epoch_ns delta; CLI startup is excluded; actual_changed_percent=19.9849
+business,native,10000000,,2,false,database_cleanup,python_perf_counter,5325667,after_database_cleanup,0,767832064,0,0,0,0,767832064,,,,,,,,,python perf_counter around unlink of the candidate database files
+controlled,differential,10000000,1,2,false,before_load,,,before_load,0,0,0,0,0,0,0,100000,,,,,,,,storage checkpoint with no timed operation
+controlled,differential,10000000,1,2,false,load,duckdb_epoch_ns,2905886000,after_load,130776952,712704,0,130064248,0,0,130776952,100000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,1,2,false,snapshot,duckdb_epoch_ns,5538000,before_branch,130776952,712704,0,130064248,0,0,130776952,100000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,1,2,false,branch_creation,duckdb_epoch_ns,4363000,after_branch,130858872,794624,0,130064248,0,0,130858872,100000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,1,2,false,controlled_update,duckdb_epoch_ns,18750000,,,,,,,,,100000,100000,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,1,2,false,snapshot_after_update,duckdb_epoch_ns,5091000,after_candidate_snapshot,136098100,974848,0,135123252,0,0,136098100,100000,100000,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,1,2,false,branch_cleanup,duckdb_epoch_ns,5360000,after_branch_deletion,136098100,974848,0,135123252,0,0,136098100,100000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,1,2,false,snapshot_expiry,duckdb_epoch_ns,3396000,after_expiry,136098100,974848,0,135123252,0,0,136098100,100000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,1,2,false,garbage_collection,duckdb_epoch_ns,9575000,after_gc,131043192,978944,0,130064248,0,0,131043192,100000,,,,,,5,1310720,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,1,2,false,before_load,,,before_load,0,0,0,0,0,0,0,100000,,,,,,,,storage checkpoint with no timed operation
+controlled,native,10000000,1,2,false,load,duckdb_epoch_ns,2816850000,,,,,,,,,100000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,1,2,false,load_checkpoint,duckdb_epoch_ns,521000,after_load,0,129511424,0,0,0,0,129511424,100000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,1,2,false,database_copy,python_perf_counter,15552875,after_copy,0,259022848,0,0,0,0,259022848,100000,,,,,,,,python perf_counter including fsync of the destination
+controlled,native,10000000,1,2,false,controlled_update,duckdb_epoch_ns,12509000,,,,,,,,,100000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,1,2,false,update_checkpoint,duckdb_epoch_ns,12152000,after_candidate_snapshot,0,259547136,0,0,0,0,259547136,100000,100000,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,1,2,false,database_cleanup,python_perf_counter,917625,after_database_cleanup,0,129511424,0,0,0,0,129511424,100000,,,,,,,,python perf_counter around unlink of the updated copy
+controlled,differential,10000000,10,2,false,before_load,,,before_load,0,0,0,0,0,0,0,1000000,,,,,,,,storage checkpoint with no timed operation
+controlled,differential,10000000,10,2,false,load,duckdb_epoch_ns,2885621000,after_load,130760570,696320,0,130064250,0,0,130760570,1000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,10,2,false,snapshot,duckdb_epoch_ns,5427000,before_branch,130760570,696320,0,130064250,0,0,130760570,1000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,10,2,false,branch_creation,duckdb_epoch_ns,4476000,after_branch,130842490,778240,0,130064250,0,0,130842490,1000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,10,2,false,controlled_update,duckdb_epoch_ns,40686000,,,,,,,,,1000000,1000000,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,10,2,false,snapshot_after_update,duckdb_epoch_ns,5071000,after_candidate_snapshot,137311274,950272,0,136361002,0,0,137311274,1000000,1000000,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,10,2,false,branch_cleanup,duckdb_epoch_ns,5281000,after_branch_deletion,137311274,950272,0,136361002,0,0,137311274,1000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,10,2,false,snapshot_expiry,duckdb_epoch_ns,3301000,after_expiry,137311274,950272,0,136361002,0,0,137311274,1000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,10,2,false,garbage_collection,duckdb_epoch_ns,10375000,after_gc,131018618,954368,0,130064250,0,0,131018618,1000000,,,,,,25,6553600,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,10,2,false,before_load,,,before_load,0,0,0,0,0,0,0,1000000,,,,,,,,storage checkpoint with no timed operation
+controlled,native,10000000,10,2,false,load,duckdb_epoch_ns,2811015000,,,,,,,,,1000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,10,2,false,load_checkpoint,duckdb_epoch_ns,549000,after_load,0,129511424,0,0,0,0,129511424,1000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,10,2,false,database_copy,python_perf_counter,16110083,after_copy,0,259022848,0,0,0,0,259022848,1000000,,,,,,,,python perf_counter including fsync of the destination
+controlled,native,10000000,10,2,false,controlled_update,duckdb_epoch_ns,28908000,,,,,,,,,1000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,10,2,false,update_checkpoint,duckdb_epoch_ns,541000,after_candidate_snapshot,0,264790016,0,0,0,0,264790016,1000000,1000000,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,10,2,false,database_cleanup,python_perf_counter,958292,after_database_cleanup,0,129511424,0,0,0,0,129511424,1000000,,,,,,,,python perf_counter around unlink of the updated copy
+controlled,differential,10000000,50,2,false,before_load,,,before_load,0,0,0,0,0,0,0,5000000,,,,,,,,storage checkpoint with no timed operation
+controlled,differential,10000000,50,2,false,load,duckdb_epoch_ns,2890135000,after_load,130776952,712704,0,130064248,0,0,130776952,5000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,50,2,false,snapshot,duckdb_epoch_ns,5474000,before_branch,130776952,712704,0,130064248,0,0,130776952,5000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,50,2,false,branch_creation,duckdb_epoch_ns,4219000,after_branch,130858872,794624,0,130064248,0,0,130858872,5000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,50,2,false,controlled_update,duckdb_epoch_ns,122968000,,,,,,,,,5000000,5000000,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,50,2,false,snapshot_after_update,duckdb_epoch_ns,5178000,after_candidate_snapshot,160994568,1036288,0,159958280,0,0,160994568,5000000,5000000,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,50,2,false,branch_cleanup,duckdb_epoch_ns,5384000,after_branch_deletion,160994568,1036288,0,159958280,0,0,160994568,5000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,50,2,false,snapshot_expiry,duckdb_epoch_ns,3320000,after_expiry,160994568,1036288,0,159958280,0,0,160994568,5000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,50,2,false,garbage_collection,duckdb_epoch_ns,13343000,after_gc,131104632,1040384,0,130064248,0,0,131104632,5000000,,,,,,115,30146560,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,50,2,false,before_load,,,before_load,0,0,0,0,0,0,0,5000000,,,,,,,,storage checkpoint with no timed operation
+controlled,native,10000000,50,2,false,load,duckdb_epoch_ns,2818689000,,,,,,,,,5000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,50,2,false,load_checkpoint,duckdb_epoch_ns,502000,after_load,0,129511424,0,0,0,0,129511424,5000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,50,2,false,database_copy,python_perf_counter,15965000,after_copy,0,259022848,0,0,0,0,259022848,5000000,,,,,,,,python perf_counter including fsync of the destination
+controlled,native,10000000,50,2,false,controlled_update,duckdb_epoch_ns,105923000,,,,,,,,,5000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,50,2,false,update_checkpoint,duckdb_epoch_ns,493000,after_candidate_snapshot,0,288382976,0,0,0,0,288382976,5000000,5000000,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,50,2,false,database_cleanup,python_perf_counter,1173000,after_database_cleanup,0,129511424,0,0,0,0,129511424,5000000,,,,,,,,python perf_counter around unlink of the updated copy
+controlled,differential,10000000,100,2,false,before_load,,,before_load,0,0,0,0,0,0,0,10000000,,,,,,,,storage checkpoint with no timed operation
+controlled,differential,10000000,100,2,false,load,duckdb_epoch_ns,2893112000,after_load,130776953,712704,0,130064249,0,0,130776953,10000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,100,2,false,snapshot,duckdb_epoch_ns,5611000,before_branch,130776953,712704,0,130064249,0,0,130776953,10000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,100,2,false,branch_creation,duckdb_epoch_ns,4535000,after_branch,130858873,794624,0,130064249,0,0,130858873,10000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,100,2,false,controlled_update,duckdb_epoch_ns,226537000,,,,,,,,,10000000,10000000,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,100,2,false,snapshot_after_update,duckdb_epoch_ns,5229000,after_candidate_snapshot,191486665,1114112,0,190372553,0,0,191486665,10000000,10000000,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,100,2,false,branch_cleanup,duckdb_epoch_ns,5601000,after_branch_deletion,191486665,1114112,0,190372553,0,0,191486665,10000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,100,2,false,snapshot_expiry,duckdb_epoch_ns,3723000,after_expiry,191486665,1114112,0,190372553,0,0,191486665,10000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,100,2,false,garbage_collection,duckdb_epoch_ns,16930000,after_gc,131182457,1118208,0,130064249,0,0,131182457,10000000,,,,,,231,60555264,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,100,2,false,before_load,,,before_load,0,0,0,0,0,0,0,10000000,,,,,,,,storage checkpoint with no timed operation
+controlled,native,10000000,100,2,false,load,duckdb_epoch_ns,2801839000,,,,,,,,,10000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,100,2,false,load_checkpoint,duckdb_epoch_ns,498000,after_load,0,129511424,0,0,0,0,129511424,10000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,100,2,false,database_copy,python_perf_counter,19825958,after_copy,0,259022848,0,0,0,0,259022848,10000000,,,,,,,,python perf_counter including fsync of the destination
+controlled,native,10000000,100,2,false,controlled_update,duckdb_epoch_ns,204272000,,,,,,,,,10000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,100,2,false,update_checkpoint,duckdb_epoch_ns,534000,after_candidate_snapshot,0,318529536,0,0,0,0,318529536,10000000,10000000,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,100,2,false,database_cleanup,python_perf_counter,1349167,after_database_cleanup,0,129511424,0,0,0,0,129511424,10000000,,,,,,,,python perf_counter around unlink of the updated copy
+business,differential,10000000,,3,false,before_load,,,before_load,0,0,0,0,0,0,0,,,,,,,,,storage checkpoint with no timed operation
+business,differential,10000000,,3,false,load,duckdb_epoch_ns,4712865000,after_load,674178068,1900544,0,672277524,0,0,674178068,,,,,,,,,in-process epoch_ns delta; CLI startup is excluded; differential_auto_gc=false
+business,differential,10000000,,3,false,snapshot,duckdb_epoch_ns,5974000,before_branch,674178068,1900544,0,672277524,0,0,674178068,,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+business,differential,10000000,,3,false,branch_creation,duckdb_epoch_ns,11663000,after_branch,674903060,2625536,0,672277524,0,0,674903060,,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+business,differential,10000000,,3,false,baseline_transform,duckdb_epoch_ns,181367000,,,,,,,,,,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+business,differential,10000000,,3,false,baseline_snapshot,duckdb_epoch_ns,5828000,after_baseline_snapshot,878347210,3342336,0,875004874,0,0,878347210,,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+business,differential,10000000,,3,false,candidate_transform,duckdb_epoch_ns,184142000,,,,,,,,,,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+business,differential,10000000,,3,false,candidate_snapshot,duckdb_epoch_ns,5486000,after_candidate_snapshot,1081545551,4075520,0,1077470031,0,0,1081545551,,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+business,differential,10000000,,3,false,comparison,duckdb_epoch_ns,415517000,after_comparison,1081545551,4075520,0,1077470031,0,0,1081545551,,,0,0,1998489,8001511,,,in-process epoch_ns delta; CLI startup is excluded; actual_changed_percent=19.9849
+business,differential,10000000,,3,false,branch_cleanup,duckdb_epoch_ns,6016000,after_branch_deletion,1081545551,4075520,0,1077470031,0,0,1081545551,,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+business,differential,10000000,,3,false,snapshot_expiry,duckdb_epoch_ns,3510000,after_expiry,1081545551,4075520,0,1077470031,0,0,1081545551,,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+business,differential,10000000,,3,false,garbage_collection,duckdb_epoch_ns,50322000,after_gc,817456379,4079616,0,813376763,0,0,817456379,,,,,,,492,128974848,in-process epoch_ns delta; CLI startup is excluded
+business,native,10000000,,3,false,before_load,,,before_load,0,0,0,0,0,0,0,,,,,,,,,storage checkpoint with no timed operation
+business,native,10000000,,3,false,load,duckdb_epoch_ns,4449088000,,,,,,,,,,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+business,native,10000000,,3,false,load_checkpoint,duckdb_epoch_ns,539000,after_load,0,565981184,0,0,0,0,565981184,,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+business,native,10000000,,3,false,database_copy,python_perf_counter,79059833,after_copy,0,1131962368,0,0,0,0,1131962368,,,,,,,,,python perf_counter including fsync of the destination
+business,native,10000000,,3,false,baseline_transform,duckdb_epoch_ns,150458000,,,,,,,,,,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+business,native,10000000,,3,false,baseline_checkpoint,duckdb_epoch_ns,291741000,after_baseline_transform,0,1333288960,0,0,0,0,1333288960,,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+business,native,10000000,,3,false,candidate_transform,duckdb_epoch_ns,151851000,,,,,,,,,,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+business,native,10000000,,3,false,candidate_checkpoint,duckdb_epoch_ns,299945000,after_candidate_snapshot,0,1535139840,0,0,0,0,1535139840,,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+business,native,10000000,,3,false,comparison,duckdb_epoch_ns,412317000,after_comparison,0,1535139840,0,0,0,0,1535139840,,,0,0,1998489,8001511,,,in-process epoch_ns delta; CLI startup is excluded; actual_changed_percent=19.9849
+business,native,10000000,,3,false,database_cleanup,python_perf_counter,5307583,after_database_cleanup,0,767307776,0,0,0,0,767307776,,,,,,,,,python perf_counter around unlink of the candidate database files
+controlled,differential,10000000,1,3,false,before_load,,,before_load,0,0,0,0,0,0,0,100000,,,,,,,,storage checkpoint with no timed operation
+controlled,differential,10000000,1,3,false,load,duckdb_epoch_ns,2894651000,after_load,130756468,692224,0,130064244,0,0,130756468,100000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,1,3,false,snapshot,duckdb_epoch_ns,12781000,before_branch,130756468,692224,0,130064244,0,0,130756468,100000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,1,3,false,branch_creation,duckdb_epoch_ns,4516000,after_branch,130834292,770048,0,130064244,0,0,130834292,100000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,1,3,false,controlled_update,duckdb_epoch_ns,18942000,,,,,,,,,100000,100000,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,1,3,false,snapshot_after_update,duckdb_epoch_ns,5055000,after_candidate_snapshot,136081708,958464,0,135123244,0,0,136081708,100000,100000,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,1,3,false,branch_cleanup,duckdb_epoch_ns,5680000,after_branch_deletion,136081708,958464,0,135123244,0,0,136081708,100000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,1,3,false,snapshot_expiry,duckdb_epoch_ns,3378000,after_expiry,136081708,958464,0,135123244,0,0,136081708,100000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,1,3,false,garbage_collection,duckdb_epoch_ns,10074000,after_gc,131026804,962560,0,130064244,0,0,131026804,100000,,,,,,5,1310720,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,1,3,false,before_load,,,before_load,0,0,0,0,0,0,0,100000,,,,,,,,storage checkpoint with no timed operation
+controlled,native,10000000,1,3,false,load,duckdb_epoch_ns,2810385000,,,,,,,,,100000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,1,3,false,load_checkpoint,duckdb_epoch_ns,552000,after_load,0,129511424,0,0,0,0,129511424,100000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,1,3,false,database_copy,python_perf_counter,15694875,after_copy,0,259022848,0,0,0,0,259022848,100000,,,,,,,,python perf_counter including fsync of the destination
+controlled,native,10000000,1,3,false,controlled_update,duckdb_epoch_ns,12723000,,,,,,,,,100000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,1,3,false,update_checkpoint,duckdb_epoch_ns,12607000,after_candidate_snapshot,0,259547136,0,0,0,0,259547136,100000,100000,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,1,3,false,database_cleanup,python_perf_counter,95541,after_database_cleanup,0,129511424,0,0,0,0,129511424,100000,,,,,,,,python perf_counter around unlink of the updated copy
+controlled,differential,10000000,10,3,false,before_load,,,before_load,0,0,0,0,0,0,0,1000000,,,,,,,,storage checkpoint with no timed operation
+controlled,differential,10000000,10,3,false,load,duckdb_epoch_ns,2897940000,after_load,130768758,704512,0,130064246,0,0,130768758,1000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,10,3,false,snapshot,duckdb_epoch_ns,5511000,before_branch,130768758,704512,0,130064246,0,0,130768758,1000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,10,3,false,branch_creation,duckdb_epoch_ns,4248000,after_branch,130846582,782336,0,130064246,0,0,130846582,1000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,10,3,false,controlled_update,duckdb_epoch_ns,38638000,,,,,,,,,1000000,1000000,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,10,3,false,snapshot_after_update,duckdb_epoch_ns,5503000,after_candidate_snapshot,137335846,974848,0,136360998,0,0,137335846,1000000,1000000,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,10,3,false,branch_cleanup,duckdb_epoch_ns,5424000,after_branch_deletion,137335846,974848,0,136360998,0,0,137335846,1000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,10,3,false,snapshot_expiry,duckdb_epoch_ns,3415000,after_expiry,137335846,974848,0,136360998,0,0,137335846,1000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,10,3,false,garbage_collection,duckdb_epoch_ns,10610000,after_gc,131043190,978944,0,130064246,0,0,131043190,1000000,,,,,,25,6553600,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,10,3,false,before_load,,,before_load,0,0,0,0,0,0,0,1000000,,,,,,,,storage checkpoint with no timed operation
+controlled,native,10000000,10,3,false,load,duckdb_epoch_ns,2824150000,,,,,,,,,1000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,10,3,false,load_checkpoint,duckdb_epoch_ns,551000,after_load,0,129511424,0,0,0,0,129511424,1000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,10,3,false,database_copy,python_perf_counter,19279000,after_copy,0,259022848,0,0,0,0,259022848,1000000,,,,,,,,python perf_counter including fsync of the destination
+controlled,native,10000000,10,3,false,controlled_update,duckdb_epoch_ns,28615000,,,,,,,,,1000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,10,3,false,update_checkpoint,duckdb_epoch_ns,436000,after_candidate_snapshot,0,264790016,0,0,0,0,264790016,1000000,1000000,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,10,3,false,database_cleanup,python_perf_counter,930666,after_database_cleanup,0,129511424,0,0,0,0,129511424,1000000,,,,,,,,python perf_counter around unlink of the updated copy
+controlled,differential,10000000,50,3,false,before_load,,,before_load,0,0,0,0,0,0,0,5000000,,,,,,,,storage checkpoint with no timed operation
+controlled,differential,10000000,50,3,false,load,duckdb_epoch_ns,2915824000,after_load,130764661,700416,0,130064245,0,0,130764661,5000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,50,3,false,snapshot,duckdb_epoch_ns,5692000,before_branch,130764661,700416,0,130064245,0,0,130764661,5000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,50,3,false,branch_creation,duckdb_epoch_ns,4342000,after_branch,130846581,782336,0,130064245,0,0,130846581,5000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,50,3,false,controlled_update,duckdb_epoch_ns,122010000,,,,,,,,,5000000,5000000,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,50,3,false,snapshot_after_update,duckdb_epoch_ns,5394000,after_candidate_snapshot,160974085,1015808,0,159958277,0,0,160974085,5000000,5000000,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,50,3,false,branch_cleanup,duckdb_epoch_ns,5718000,after_branch_deletion,160974085,1015808,0,159958277,0,0,160974085,5000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,50,3,false,snapshot_expiry,duckdb_epoch_ns,3376000,after_expiry,160974085,1015808,0,159958277,0,0,160974085,5000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,50,3,false,garbage_collection,duckdb_epoch_ns,13125000,after_gc,131084149,1019904,0,130064245,0,0,131084149,5000000,,,,,,115,30146560,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,50,3,false,before_load,,,before_load,0,0,0,0,0,0,0,5000000,,,,,,,,storage checkpoint with no timed operation
+controlled,native,10000000,50,3,false,load,duckdb_epoch_ns,2817108000,,,,,,,,,5000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,50,3,false,load_checkpoint,duckdb_epoch_ns,546000,after_load,0,129511424,0,0,0,0,129511424,5000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,50,3,false,database_copy,python_perf_counter,15744292,after_copy,0,259022848,0,0,0,0,259022848,5000000,,,,,,,,python perf_counter including fsync of the destination
+controlled,native,10000000,50,3,false,controlled_update,duckdb_epoch_ns,109386000,,,,,,,,,5000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,50,3,false,update_checkpoint,duckdb_epoch_ns,495000,after_candidate_snapshot,0,288382976,0,0,0,0,288382976,5000000,5000000,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,50,3,false,database_cleanup,python_perf_counter,1224541,after_database_cleanup,0,129511424,0,0,0,0,129511424,5000000,,,,,,,,python perf_counter around unlink of the updated copy
+controlled,differential,10000000,100,3,false,before_load,,,before_load,0,0,0,0,0,0,0,10000000,,,,,,,,storage checkpoint with no timed operation
+controlled,differential,10000000,100,3,false,load,duckdb_epoch_ns,2915484000,after_load,130756473,692224,0,130064249,0,0,130756473,10000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,100,3,false,snapshot,duckdb_epoch_ns,6791000,before_branch,130756473,692224,0,130064249,0,0,130756473,10000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,100,3,false,branch_creation,duckdb_epoch_ns,4474000,after_branch,130838393,774144,0,130064249,0,0,130838393,10000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,100,3,false,controlled_update,duckdb_epoch_ns,238265000,,,,,,,,,10000000,10000000,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,100,3,false,snapshot_after_update,duckdb_epoch_ns,5366000,after_candidate_snapshot,191216281,1105920,0,190110361,0,0,191216281,10000000,10000000,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,100,3,false,branch_cleanup,duckdb_epoch_ns,5528000,after_branch_deletion,191216281,1105920,0,190110361,0,0,191216281,10000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,100,3,false,snapshot_expiry,duckdb_epoch_ns,3484000,after_expiry,191216281,1105920,0,190110361,0,0,191216281,10000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,differential,10000000,100,3,false,garbage_collection,duckdb_epoch_ns,16626000,after_gc,131174265,1110016,0,130064249,0,0,131174265,10000000,,,,,,230,60293120,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,100,3,false,before_load,,,before_load,0,0,0,0,0,0,0,10000000,,,,,,,,storage checkpoint with no timed operation
+controlled,native,10000000,100,3,false,load,duckdb_epoch_ns,2803488000,,,,,,,,,10000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,100,3,false,load_checkpoint,duckdb_epoch_ns,504000,after_load,0,129511424,0,0,0,0,129511424,10000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,100,3,false,database_copy,python_perf_counter,15863459,after_copy,0,259022848,0,0,0,0,259022848,10000000,,,,,,,,python perf_counter including fsync of the destination
+controlled,native,10000000,100,3,false,controlled_update,duckdb_epoch_ns,206938000,,,,,,,,,10000000,,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,100,3,false,update_checkpoint,duckdb_epoch_ns,551000,after_candidate_snapshot,0,318529536,0,0,0,0,318529536,10000000,10000000,,,,,,,in-process epoch_ns delta; CLI startup is excluded
+controlled,native,10000000,100,3,false,database_cleanup,python_perf_counter,1362209,after_database_cleanup,0,129511424,0,0,0,0,129511424,10000000,,,,,,,,python perf_counter around unlink of the updated copy

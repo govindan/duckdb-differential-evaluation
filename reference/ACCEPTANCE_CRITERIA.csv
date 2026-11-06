@@ -1,0 +1,33 @@
+Acceptance_ID,Criterion,Category
+AC01,Dataset reproducible with same seed and parameters,Core functional
+AC02,Raw input keys unique and input count verified,Core functional
+AC03,One common input snapshot created,Core functional
+AC04,Baseline branch created from common snapshot,Core functional
+AC05,Candidate branch created from same snapshot,Core functional
+AC06,Both branches expose identical raw input before transformations,Core functional
+AC07,Original transformation executes on baseline,Core functional
+AC08,Modified transformation executes on candidate,Core functional
+AC09,Raw input remains unchanged,Core functional
+AC10,Baseline remains unchanged by candidate writes,Core functional
+AC11,"SQL identifies added, missing, changed and unchanged records",Core functional
+AC12,Classification boundary tests pass,Core functional
+AC13,Repeated execution gives equivalent logical outputs,Core functional
+AC14,Snapshot can be reopened and queried,Lifecycle
+AC15,Historical state can be accessed,Lifecycle
+AC16,Clone and isolation tested or marked unverified,Lifecycle
+AC17,Restore tested or marked unverified,Lifecycle
+AC18,Branch deletion and eligible snapshot expiry tested or marked unverified,Lifecycle
+AC19,Garbage collection outcome measured and documented,Lifecycle
+AC20,Conventional DuckDB control produces equivalent outputs,Control/benchmark
+AC21,"10K, 100K, 1M attempted; 10M optional",Control/benchmark
+AC22,"Controlled update workload changes exact 1%, 10%, 50%, 100% row counts",Control/benchmark
+AC23,Storage measured using consistent physical boundaries,Control/benchmark
+AC24,Timings separated by operation,Control/benchmark
+AC25,Repeated measurements and environment details recorded,Control/benchmark
+AC26,Normal restart tested,Reliability/reporting
+AC27,Committed-write process termination tested safely,Reliability/reporting
+AC28,In-progress failure tested where feasible or marked unverified,Reliability/reporting
+AC29,Recovered states pass applicable integrity checks,Reliability/reporting
+AC30,CSV and Markdown reports generated,Reliability/reporting
+AC31,README explains setup and execution,Reliability/reporting
+AC32,Capabilities classified demonstrated/documented/unverified,Reliability/reporting

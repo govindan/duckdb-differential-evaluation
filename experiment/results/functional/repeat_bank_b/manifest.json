@@ -1,0 +1,92 @@
+{
+  "phase": 1,
+  "status": "passed",
+  "started_at": "2026-11-06T04:37:05.370888+00:00",
+  "database": "bank_b",
+  "dataset_size": 10000,
+  "seed": 20261106,
+  "currency": "AUD",
+  "differential_auto_gc": false,
+  "duckdb_cli": "build/release/duckdb",
+  "repository": "experiment/test/phase1",
+  "results_dir": "experiment/results/functional/repeat_bank_b",
+  "os": "macOS-27.0.1-arm64-arm-64bit",
+  "architecture": "arm64",
+  "duckdb_version": "v2.0.0 (Cyanoptera) d54cbbe3df",
+  "input_checksum_sha256": "7e2de72f9e9f2f8a976ddb9377bb5e37f034459f46761efa209dd89d95bf3560",
+  "input_csv": "experiment/test/bank_b.csv",
+  "differential_version": "v1.0.0",
+  "differential_auto_gc_setting": "false",
+  "snapshot": {
+    "operation_id": "6a08a17d-4fe7-46cb-9fcc-529bb5c9ba44",
+    "database_id": "6a83fbb7-242d-4aed-b342-63e4dc7324ef",
+    "branch_id": "671bfc2d-d112-43c8-8714-c36dad3ed639",
+    "snapshot_id": "1",
+    "state": "complete",
+    "export_state": "not_required",
+    "snapshot_time": "2026-11-06 10:07:05.664035+05:30"
+  },
+  "branches": {
+    "baseline": {
+      "operation_id": "27e5a341-6609-4199-bc49-5be638586e72",
+      "database_id": "6a83fbb7-242d-4aed-b342-63e4dc7324ef",
+      "branch_id": "41528c11-15d4-4f12-88f3-a7ea9cfd301a",
+      "snapshot_id": "1",
+      "state": "complete"
+    },
+    "candidate": {
+      "operation_id": "3fdccd80-42d5-4484-9d63-eb02a97b1f73",
+      "database_id": "6a83fbb7-242d-4aed-b342-63e4dc7324ef",
+      "branch_id": "ce74fbcc-a97b-48d6-b32a-4d46fbd7db08",
+      "snapshot_id": "1",
+      "state": "complete"
+    }
+  },
+  "raw_verification": {
+    "branches_from_snapshot": "2",
+    "main_head": "1",
+    "main_count": "10000",
+    "baseline_count": "10000",
+    "candidate_count": "10000",
+    "main_duplicate_keys": "0",
+    "baseline_duplicate_keys": "0",
+    "candidate_duplicate_keys": "0",
+    "main_not_baseline": "0",
+    "baseline_not_main": "0",
+    "baseline_not_candidate": "0",
+    "candidate_not_baseline": "0",
+    "main_fingerprint": "9ef5daa48404d971abef48dcb20730e7",
+    "baseline_fingerprint": "9ef5daa48404d971abef48dcb20730e7",
+    "candidate_fingerprint": "9ef5daa48404d971abef48dcb20730e7"
+  },
+  "baseline_classification_fingerprint": "65934bf740f50d94ef0b59e99ef0a204",
+  "candidate_classification_fingerprint": "1de4b3009c1b87bfea99f61b023b197f",
+  "isolation": {
+    "main_classification_tables": "0",
+    "baseline_classification_tables": "1",
+    "candidate_classification_tables": "1",
+    "main_classification_columns": "0",
+    "baseline_classified_rows": "10000",
+    "candidate_classified_rows": "10000",
+    "baseline_fingerprint": "65934bf740f50d94ef0b59e99ef0a204",
+    "candidate_fingerprint": "1de4b3009c1b87bfea99f61b023b197f",
+    "main_raw_fingerprint": "9ef5daa48404d971abef48dcb20730e7",
+    "baseline_raw_fingerprint": "9ef5daa48404d971abef48dcb20730e7",
+    "candidate_raw_fingerprint": "9ef5daa48404d971abef48dcb20730e7",
+    "main_not_baseline": "0",
+    "baseline_not_candidate": "0"
+  },
+  "class_counts": {
+    "baseline": {
+      "HIGH": 1005,
+      "LOW": 4000,
+      "MEDIUM": 4995
+    },
+    "candidate": {
+      "HIGH": 2991,
+      "LOW": 4000,
+      "MEDIUM": 3009
+    }
+  },
+  "finished_at": "2026-11-06T04:37:06.060825+00:00"
+}

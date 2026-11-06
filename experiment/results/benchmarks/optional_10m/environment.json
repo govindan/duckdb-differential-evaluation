@@ -1,0 +1,39 @@
+{
+  "duckdb_cli": "build/release/duckdb",
+  "duckdb_cli_sha256": "1c81a7c2551ebd95f0d24c5fb890925fe9995151675baadb43d6028087cf2fc4",
+  "duckdb_version_output": "v2.0.0 (Cyanoptera) d54cbbe3df",
+  "settings": "duckdb_version,threads,memory_limit\nv2.0.0,14,19.1 GiB",
+  "extension": "extension_name,extension_version,installed,install_path\ndifferential,v1.0.0,true,(BUILT-IN)",
+  "platform": "macOS-27.0.1-arm64-arm-64bit",
+  "machine": "arm64",
+  "processor": "25769803776\n14",
+  "filesystem": "Filesystem   1024-blocks      Used Available Capacity iused      ifree %iused  Mounted on\n/dev/disk3s5   971350180 284866056 660675064    31% 3102022 6606750640    0%   /System/Volumes/Data",
+  "dataset_seed": 20261106,
+  "currency": "AUD",
+  "sizes": [
+    10000000
+  ],
+  "changed_percents": [
+    1,
+    10,
+    50,
+    100
+  ],
+  "measured_repetitions": 3,
+  "warmup_repetition": true,
+  "differential_auto_gc": false,
+  "timing": {
+    "duckdb_operations": "epoch_ns(get_current_timestamp()) delta inside the operation process; CLI startup excluded",
+    "filesystem_copy": "Python perf_counter around shutil.copy2 plus fsync of each destination file and its directory",
+    "filesystem_delete": "Python perf_counter around unlink"
+  },
+  "storage": {
+    "differential_state": "repository directory bytes plus temp_directory bytes; WAL is inside the repository total and also reported separately",
+    "native_state": "sum of .duckdb, WAL and temp bytes for the baseline and candidate files present at the checkpoint",
+    "logical_copy": "reported separately and excluded from the native filesystem-copy total"
+  },
+  "workloads": {
+    "business": "baseline and candidate classification SQL; actual change count is measured",
+    "controlled": "UPDATE status and payload WHERE row_id < size * percent / 100"
+  }
+}

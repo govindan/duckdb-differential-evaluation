@@ -1,0 +1,68 @@
+{
+  "baseline": "mvp-v1.0",
+  "baseline_status": "frozen",
+  "run_id": "mvp-v1-phase5",
+  "dataset_seed": 20261106,
+  "dataset_sizes": [
+    10000,
+    100000,
+    1000000,
+    10000000
+  ],
+  "controlled_percents": [
+    1,
+    10,
+    50,
+    100
+  ],
+  "duckdb_version": "v2.0.0 (Cyanoptera) d54cbbe3df",
+  "duckdb_cli_sha256": "1c81a7c2551ebd95f0d24c5fb890925fe9995151675baadb43d6028087cf2fc4",
+  "extension_source_commit": "844ae5fcb686b26ca401f27d03ccf4e77636fe58",
+  "evaluation_tree": "untracked under the extension source repository",
+  "source_file_sha256": {
+    "sql/schema.sql": "9189143571c6aac3dc4eaf694bdce55e3e18c9664988f3d2e4653da1eb632362",
+    "sql/baseline_transformation.sql": "994f119dde683741fece2cd866a1aad03678fea0f1287147b8b4faaedd1ff90e",
+    "sql/candidate_transformation.sql": "04d28dec1cec6fc22e09e4ba24d0b2c4ce85ca4d43b56189446c302b6aea9a1e",
+    "sql/comparison.sql": "7d9de34563aa7b2d85f91c9a0ef497fcda0fffaf8768b24d35cb7df1d1f60d25",
+    "python/benchmark.py": "5e7f21d66bf2b701dcbfef179354fdeee9026adf3faa35e892580148c76f493b",
+    "python/generate_data.py": "9c5b825e24e984e53dd47c6d8e81fd2b68139edad8fbbbfd84fe65ec82034967"
+  },
+  "benchmark_snapshots": "results/reports/benchmark_snapshots.csv",
+  "extension": "extension_name,extension_version,installed,install_path\ndifferential,v1.0.0,true,(BUILT-IN)",
+  "platform": "macOS-27.0.1-arm64-arm-64bit",
+  "machine": "arm64",
+  "processor": "25769803776\n14",
+  "filesystem": "Filesystem   1024-blocks      Used Available Capacity iused      ifree %iused  Mounted on\n/dev/disk3s5   971350180 283375056 662166064    30% 3099704 6621660640    0%   /System/Volumes/Data",
+  "settings": "duckdb_version,threads,memory_limit\nv2.0.0,14,19.1 GiB",
+  "benchmark_wall_clock_ns": "60023171167",
+  "optional_10m_wall_clock_ns": "220854184041",
+  "changed_row_evidence": "results/benchmarks/observations.csv and results/benchmarks/optional_10m/observations.csv; warmup=false; operation=comparison",
+  "timing_evidence": "results/benchmarks/summary.csv and results/benchmarks/optional_10m/summary.csv; samples=3 excludes warmup; logical_database_copy has samples=1",
+  "storage_evidence": "results/benchmarks/storage_summary.csv and results/benchmarks/optional_10m/storage_summary.csv; incremental bytes are the median of paired per-repetition differences in results/reports/storage_comparison.csv",
+  "commands": [
+    "python3 python/benchmark.py",
+    "python3 python/persistence.py",
+    "python3 python/report.py"
+  ],
+  "phase1_snapshot_and_branches": "results/functional/phase1/manifest.json",
+  "persistence_tests": [
+    "PR07 UNVERIFIED",
+    "PR01 DEMONSTRATED",
+    "PR02 DEMONSTRATED",
+    "PR03 DEMONSTRATED",
+    "PR04 DEMONSTRATED",
+    "PR05 DEMONSTRATED",
+    "PR06 DEMONSTRATED",
+    "PR08 UNVERIFIED"
+  ],
+  "evidence": [
+    "results/functional/phase1",
+    "results/functional/phase2",
+    "results/functional/phase3",
+    "results/benchmarks",
+    "results/benchmarks/optional_10m",
+    "results/functional/phase5/persistence_tests.csv",
+    "results/reports",
+    "results/REPORT.md"
+  ]
+}

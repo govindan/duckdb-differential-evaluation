@@ -1,0 +1,17 @@
+Differential_Capability,Experiment,Acceptance_Criteria,Expected_Evidence
+Snapshot creation,E1,AC03,Snapshot ID and captured raw input evidence
+Branch creation,E1,AC04; AC05,Branch references and common source snapshot
+Branch input consistency,E1,AC06,"Row counts, keys and input fingerprint on both branches"
+Branch isolation,E1,AC09; AC10,Before/after state checks on both branches
+Historical access,E2,AC14; AC15,Query result from selected historical snapshot
+Clone and clone isolation,E2,AC16,Clone reference and independent-write verification
+Restore,E2,AC17,Restored state compared with selected snapshot
+Branch deletion and expiry,E2,AC18,Lifecycle command result and retained-state checks
+Garbage collection,E2,AC19,Repository size before/after and eligibility notes
+Storage sharing,E3,AC22; AC23,Differential incremental storage by controlled changed-row percentage
+Conventional copy control,E3,AC20; AC23,Independent database copy size and equivalent logical output
+Performance overhead,E3,AC21; AC24; AC25,Per-operation timings and environment metadata
+Normal persistence,E4,AC26,Reopen and query evidence
+Committed-write process recovery,E4,AC27; AC29,Post-termination integrity evidence
+In-progress failure recovery,E4,AC28; AC29,Controlled failure evidence or explicit unverified status
+Capability evidence classification,All,AC30; AC32,"Test IDs, evidence paths and status classifications"

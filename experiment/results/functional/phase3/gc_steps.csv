@@ -1,0 +1,3 @@
+dry_run,candidate_objects,candidate_bytes,deleted_objects,live_pins,stale_pins
+true,5,1310720,0,0,2
+false,5,1310720,5,0,2

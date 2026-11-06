@@ -1,0 +1,10 @@
+verification,expected,actual,result
+Common snapshot,One identifiable snapshot,"snapshots=1, snapshot_id=1, name=raw-input, time=2026-11-06 10:07:04.965111+05:30, database_id=deda0db4-4613-47e0-bf0a-677467aed3c8, retired=false",pass
+Baseline branch,Created from common snapshot,"branch_id=455b4a5d-abc1-4344-837f-8a392de054da, state=active, source_snapshot_id=1, head_snapshot_id=1, common_snapshot_id=1",pass
+Candidate branch,Created from common snapshot,"branch_id=3f7dca52-52d7-4201-93df-70b5c16cb02a, state=active, source_snapshot_id=1, head_snapshot_id=1, common_snapshot_id=1",pass
+Raw input count,Identical,"input=10000, main=10000, baseline=10000, candidate=10000",pass
+Raw transaction keys,Identical and unique,"unique=True, input_keys=10000, main_keys=10000, baseline_keys=10000, candidate_keys=10000",pass
+Raw input contents,Identical,"field mismatches: main=0, baseline=0, candidate=0",pass
+Baseline output,Original classification applied,"rows=10000, rule_mismatches=0",pass
+Candidate output,Modified classification applied,"rows=10000, rule_mismatches=0",pass
+Baseline integrity,Unchanged after candidate processing,"rows_where_rules_differ=1986, baseline_rows_changed_to_candidate_rule=0",pass

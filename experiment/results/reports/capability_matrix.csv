@@ -1,0 +1,30 @@
+capability,status,acceptance_criteria,evidence,notes
+Dataset reproducibility,DEMONSTRATED,AC01,results/benchmarks/environment.json,"10,000-row checksum matches the Phase 1 dataset"
+Common snapshot and two branches,DEMONSTRATED,AC03; AC04; AC05,results/functional/phase1/manifest.json,Both branches record the same source snapshot
+Raw input identity and isolation,DEMONSTRATED,AC02; AC06; AC09; AC10,results/functional/phase1/closure_checks.csv,Raw and baseline fingerprints unchanged after candidate processing
+Baseline and candidate classification,DEMONSTRATED,AC07; AC08,results/functional/phase2/comparison.csv,Same SQL files executed on both systems in Phase 4
+"Added, missing, changed, unchanged comparison",DEMONSTRATED,AC11,results/functional/phase2/comparison.csv,FULL OUTER JOIN on transaction_id
+Classification boundaries,DEMONSTRATED,AC12,results/functional/phase2/boundaries.csv,Six boundary amounts
+Repeated logical output,DEMONSTRATED,AC13,results/benchmarks/observations.csv,Business change counts match across Differential and native
+Snapshot reopen,DEMONSTRATED,AC14,results/functional/phase3/findings.csv,LC01
+Historical snapshot access,DEMONSTRATED,AC15,results/functional/phase3/findings.csv,LC02 and LC03
+Clone and clone isolation,DEMONSTRATED,AC16,results/functional/phase3/findings.csv,LC05 and LC06
+Restore,DEMONSTRATED,AC17,results/functional/phase3/findings.csv,LC04. The branch must be detached
+Branch deletion and snapshot expiry,DEMONSTRATED,AC18,results/functional/phase3/findings.csv,"LC07, LC08, and LC10. Expiry alone did not shrink storage"
+Local garbage collection,DEMONSTRATED,AC19,results/functional/phase3/findings.csv,LC09 and the accepted shared-object retention test
+Remote garbage collection,UNVERIFIED,AC19,results/functional/phase3/findings.csv,LC11 was not executed
+Metadata compaction,DOCUMENTED,AC19,results/functional/phase3/findings.csv,LC12. differential_compact was not executed
+Shared-object retention,DEMONSTRATED,AC19,results/functional/phase3/retention_summary.csv,Shared fingerprint unchanged and unshared bytes reclaimed
+Conventional copy logical equivalence,DEMONSTRATED,AC20,results/benchmarks/observations.csv,EXCEPT both ways for the filesystem copy and COPY FROM DATABASE
+"10K, 100K, 1M, and optional 10M benchmarks",DEMONSTRATED,AC21,results/benchmarks/summary.csv,10M is in results/benchmarks/optional_10m
+"Controlled 1, 10, 50, and 100 percent writes",DEMONSTRATED,AC22,results/benchmarks/observations.csv,Intended and actual row counts matched
+Physical storage boundaries,DEMONSTRATED,AC23,results/benchmarks/storage_summary.csv,"Repository total, database, WAL, and temp recorded after process exit"
+Per-operation timings,DEMONSTRATED,AC24,results/benchmarks/summary.csv,Three measured repetitions after one warmup
+Environment record,DEMONSTRATED,AC25,results/benchmarks/environment.json,"CLI, extension, OS, filesystem, seed, and settings"
+Normal process restart,DEMONSTRATED,AC26,results/functional/phase5/persistence_tests.csv,PR01 and PR02. Clean exit is not power-loss evidence
+Committed write after process termination,DEMONSTRATED,AC27,results/functional/phase5/persistence_tests.csv,PR03 and PR04. SIGKILL after the commit statement returned
+In-progress statement interruption,DEMONSTRATED,AC28,results/functional/phase5/persistence_tests.csv,PR05 and PR06. The committed 100 rows remained; the interrupted INSERT left 0 rows
+Recovered-state integrity,DEMONSTRATED,AC29,results/functional/phase5/persistence_tests.csv,Committed fingerprint 630e4e79ab397b2c5c06f3157d5fb9aa on every recovery read
+Power-loss durability,UNVERIFIED,AC28,results/functional/phase5/persistence_tests.csv,PR08. The page cache was not dropped
+Snapshot publication failure,UNVERIFIED,AC28,results/functional/phase5/persistence_tests.csv,PR07. test_hooks=absent
+"S3, shared writers, WAL shipping, and followers",UNVERIFIED,,results/reports/not_executed.csv,OS01. Outside this MVP execution

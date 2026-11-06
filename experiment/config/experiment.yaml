@@ -1,0 +1,8 @@
+# Phase 1 functional run. Paths are relative to the experiment directory unless absolute.
+duckdb_cli: build/release/duckdb
+repository: repository
+database: bank
+dataset_size: 10000
+seed: 20261106
+currency: AUD
+results: results/functional/phase1

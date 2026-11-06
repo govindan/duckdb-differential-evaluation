@@ -1,0 +1,13 @@
+transaction_id,transaction_amount,classification,branch
+BND-1000.00,1000.00,MEDIUM,baseline
+BND-10000.00,10000.00,HIGH,baseline
+BND-4999.99,4999.99,MEDIUM,baseline
+BND-5000.00,5000.00,MEDIUM,baseline
+BND-999.99,999.99,LOW,baseline
+BND-9999.99,9999.99,MEDIUM,baseline
+BND-1000.00,1000.00,MEDIUM,candidate
+BND-10000.00,10000.00,HIGH,candidate
+BND-4999.99,4999.99,MEDIUM,candidate
+BND-5000.00,5000.00,HIGH,candidate
+BND-999.99,999.99,LOW,candidate
+BND-9999.99,9999.99,HIGH,candidate

@@ -1,0 +1,2 @@
+joined_rows,baseline_rows,candidate_rows,added_records,missing_records,changed_records,unchanged_records,baseline_duplicate_keys,candidate_duplicate_keys,amount_mismatches,rows_in_changed_band,medium_to_high_in_band,changed_outside_band,changed_other_transition
+10000,10000,10000,0,0,1986,8014,0,0,0,1986,1986,0,0

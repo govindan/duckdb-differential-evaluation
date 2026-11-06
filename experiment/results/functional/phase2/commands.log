@@ -1,0 +1,67 @@
+[
+  {
+    "script": "experiment/results/functional/phase2/scripts/columns.sql",
+    "argv": [
+      "build/release/duckdb",
+      "-no-init",
+      "-no-agent",
+      "-bail",
+      "-csv",
+      ":memory:",
+      "-f",
+      "experiment/results/functional/phase2/scripts/columns.sql"
+    ]
+  },
+  {
+    "script": "experiment/results/functional/phase2/scripts/source_snapshot.sql",
+    "argv": [
+      "build/release/duckdb",
+      "-no-init",
+      "-no-agent",
+      "-bail",
+      "-csv",
+      ":memory:",
+      "-f",
+      "experiment/results/functional/phase2/scripts/source_snapshot.sql"
+    ]
+  },
+  {
+    "script": "experiment/results/functional/phase2/scripts/comparison.sql",
+    "argv": [
+      "build/release/duckdb",
+      "-no-init",
+      "-no-agent",
+      "-bail",
+      "-csv",
+      ":memory:",
+      "-f",
+      "experiment/results/functional/phase2/scripts/comparison.sql"
+    ]
+  },
+  {
+    "script": "experiment/results/functional/phase2/scripts/transitions.sql",
+    "argv": [
+      "build/release/duckdb",
+      "-no-init",
+      "-no-agent",
+      "-bail",
+      "-csv",
+      ":memory:",
+      "-f",
+      "experiment/results/functional/phase2/scripts/transitions.sql"
+    ]
+  },
+  {
+    "script": "experiment/results/functional/phase2/scripts/boundaries.sql",
+    "argv": [
+      "build/release/duckdb",
+      "-no-init",
+      "-no-agent",
+      "-bail",
+      "-csv",
+      ":memory:",
+      "-f",
+      "experiment/results/functional/phase2/scripts/boundaries.sql"
+    ]
+  }
+]

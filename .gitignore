@@ -1,0 +1,10 @@
+experiment/repository/
+experiment/lifecycle/
+experiment/test/
+experiment/data/
+experiment/work/
+experiment/benchmark/
+experiment/persistence/
+.DS_Store
+__pycache__/
+*.pyc

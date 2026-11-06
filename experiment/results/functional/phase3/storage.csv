@@ -1,0 +1,9 @@
+engine.sqlite,segments,journal,other,total,label
+368640,1329871,0,0,1698511,after_raw_snapshot
+368640,3703454,0,0,4072094,after_clone
+385024,5548067,0,0,5933091,before_side_expiry
+385024,5548067,0,0,5933091,after_side_expiry
+385024,12375531,0,0,12760555,after_bulk_snapshot
+385024,12375531,0,0,12760555,before_bulk_expiry
+385024,12375531,0,0,12760555,after_bulk_expiry
+385024,5548067,0,0,5933091,after_gc

@@ -1,0 +1,5 @@
+engine.sqlite,segments,journal,other,total,label
+368640,1329856,0,0,1698496,after_shared_branches
+368640,8184318,0,0,8552958,after_unshared_snapshot
+368640,8184318,0,0,8552958,after_unshared_expiry
+368640,1329856,0,0,1698496,after_gc
